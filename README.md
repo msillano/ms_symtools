@@ -1,11 +1,20 @@
-# ms_symtools
-This project was born with the aim of providing [SyMenu](https://www.ugmfree.it) with a series of new features, to facilitate the maintenance of complex menus.
+The **ms_symtool** project was born with the aim of providing **SyMenu** with a series of advanced features, to facilitate the maintenance of complex menus. Of course portables.
 
-**SyMenu** is an advanced portable alternative for *Windows 'Start Menu'.* Extremely flexible and easy to customize, it allows you to create multiple 'dedicated' menus (e.g. MMedia, CAD, etc.) with all related programs, documents and workspaces to one area, well ordered and specialized according to the interest and needs of the user. 
+>  *[**SyMenu**](https://www.ugmfree.it "SyMenu Home") is an advanced portable    alternative to* Windows 'Start Menu'. *Extremely flexible and easy    customizable, it allows you to create multiple dedicated menus (e.g. MMedia,    CAD, etc.) with all programs, documents and workspaces relating to a single    area, well organized and specialized according to the interests and needs of the user.*
 
-Of course the **ms_symtool** tools were created based on my needs and are often not really 'user-friendly', but I think they can also be useful to other experienced users with similar needs. For this they are Open Source and the latest version is available on [GitHub](https://github.com/msillano/ms_symtools "Public repository").
+*Of course the **ms_symtool** tools have been created based on my needs and are often not quite 'user-friendly', but I think they can also be useful for other experienced users with similar problems. For this they are Open Source and the latest version is available on [GitHub](https://github.com/msillano/ms_symtools "Public repository").*
 
----------------------------
-## Tools
-  1. **PrettyPrintItems** (work in progress)  is a tool that extracts from <code>SyMenuItem.zip</code> a snapshoot, with all the data of the nodes present in the **SyMenu** menu and presents them, in the form of a complete tree, in a dynamic HTML page.
+-------------
+
+[**PrettyPrint Items**](https://github.com/msillano/ms_symtools/tree/main/PrettyPrintItems  "Download from GitHub") is a tool that extracts a snapshot from the file <code> SyMenuItem.zip</code>, with all the data of the nodes currently present in the **SyMenu** menu and presents them, in the form of a complete tree, in a dynamic HTML page. This allows you to easily handle menus of any size and complexity.
+   
+![](https://github.com/msillano/ms_symtools/blob/main/img/symenyppout.png?raw=true)
+
+The **PrettyPrintItems** tool is already useful, as is, for documenting menus, but it is also a good starting point for further tools (under development).
+
+**Installation** (same for all ms-symtools)
+
+ - Unzip the distribution file in dir <code>xxx\SyMenu\Programfile</code>, so you get: <code>xxxx\SyMenu\Programfile\sm-symtools\xxx.xxx</code>
+ - Look at the help file <code>tool-name.chm</code> for specific preconditions,  istructions, etc..
+
 
