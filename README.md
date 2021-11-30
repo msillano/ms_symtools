@@ -6,7 +6,7 @@ The **ms_symtool** project was born with the aim of providing **SyMenu** with a 
 
 
 
-##SyMenu tools##
+## SyMenu tools
 
 1. **PrettyPrintItems**
 >  Gets a snapshot from the file SyMenuItem.zip, with all the data of the nodes currently present in the SyMenu menu and presents them, in the form of a complete tree, in a dynamic HTML page.
