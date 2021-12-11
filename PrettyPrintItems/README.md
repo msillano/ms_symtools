@@ -6,6 +6,6 @@
  
 The **PrettyPrintItems** output document is useful documentation per itself,  but you can also cut a branch and insert it in any of your pages: HTML, markdown (not GitHub flavor), Doxygen, etc.. keeping colors and dynamicity. 
 
-For more info you can download the prettyPrimt SyMenu help (
+For more info you can download the prettyPrimt SyMenu help (prettyPrintItems.chm)
 
 
