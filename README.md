@@ -7,8 +7,9 @@ The **ms_symtool** project was born with to provide **SyMenu** with a series of 
 -------------------------------
 [**PrettyPrint Items**](https://github.com/msillano/ms_symtools/tree/main/PrettyPrintItems  "Download from GitHub") is a tool that extracts a snapshot from the file <code>SyMenuItem.zip</code>, with all the data of the nodes currently present in the **SyMenu** menu and presents them, in the form of a complete tree, in a dynamic HTML page. This allows you to easily handle menus of any size and complexity. Example:
 
+![a SyMenu tree fragment](./img/symenyppout.png?raw=true)
 
-   
+ note: the <tt>tagfilter</tt> extension don't allows the inclusion of required tags to have a dynamic page. For a live example see here.
 The **PrettyPrintItems** output document is useful as is, but you can also cut a branch and insert it in any of your page: HTML, markdown, o Doxygen, keeping colors and dynamicity. This page, e.g., is a *markdown* page, imported by *Doxygen* to build the *chm* documentation of the entire project.
 
 --------------------------------------
