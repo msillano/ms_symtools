@@ -9,9 +9,9 @@ The **ms_symtool** project was born with to provide **SyMenu** with a series of 
 
 ![a SyMenu tree fragment](./img/symenyppout.png?raw=true)
 
- note: the <tt>tagfilter</tt> extension don't allows the inclusion of required tags to have a dynamic page. For a live example see [here.](http://o2xdl.org/storage/outputpage.html) and click on the red plus (+) to open the tree.
+ note: the <tt>tagfilter</tt> [extension used](https://github.github.com/gfm/#disallowed-raw-html-extension-) by GitHub don't allows the inclusion of required tags to have a dynamic page. For a live example see [here](http://o2xdl.org/storage/outputpage.html) and click on the red plus (+) to open the tree.
  
-The **PrettyPrintItems** output document is useful as is, but you can also cut a branch and insert it in any of your page: HTML, markdown, o Doxygen, keeping colors and dynamicity. This page, e.g., is a *markdown* page, imported by *Doxygen* to build the *chm* documentation of the entire project.
+The **PrettyPrintItems** output document is useful documentation per itself,  but you can also cut a branch and insert it in any of your pages: HTML, markdown (not GitHub flavor), Doxygen, etc.. keeping colors and dynamicity. 
 
 --------------------------------------
 **Installation** (same for all ms-symtools)
