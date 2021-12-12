@@ -6,6 +6,14 @@
  
 The **prettyPrint SyMenu** output document is useful documentation per itself,  but you can also cut a branch and insert it in any of your pages: HTML, markdown (not GitHub flavor), Doxygen, etc.. keeping colors and dynamicity. 
 
-For more info you can download the prettyPrimt SyMenu help (prettyPrintItems.chm)
+For more info you can download the **prettyPrimt SyMenu** help (file *prettyPrintItems.chm*).
 
 
+**Versions:**
+2.0 beta
+    - removed dependencies by including all required files
+    - compatibility with all customized Sy_Menu installations (using -fc or -fp)
+    - user instructions added to HTML
+    - free HTML include file policy: standalone, local, remote.
+
+1.0  alfa
