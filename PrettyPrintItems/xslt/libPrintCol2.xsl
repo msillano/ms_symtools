@@ -26,6 +26,7 @@
     +-->
 <!--
     modified 28/11/21 by M. Sillano for SyMenu (CSS)
+	
  -->
 
 <xsl:stylesheet version="1.0"
@@ -39,20 +40,21 @@
  <!--
  /** @file
  *  This is a XSLT library (template collection). 
- *  Pretty-prints XML/XHTML files/nodes as collapsible tree with syntax color highlighting.
+ *  Pretty-prints XML/XHTML files/nodes as a collapsible tree with syntax color highlighting.
  *  This library can be "imported", so it is possible to overwrite
  *  some rules, to get the desired behaviour.
  *
  * @note The output is valid XHTML 1.1
- * @note This file is a version with CSS modified of filters_dox\bin\xslt\libPrintCol.xsl.
- *
+ * @note This file is a version modified of filters_dox/bin/xslt/libPrintCol.xsl.
+ * Some comments are added to help the HTML reuse.
  */ -->
  
  <!--
  /** 
  * @var status  *
  * @details Controls the default initial look of the XML tree: accepts 'open'|'close' 
- */ --> 
+ *  This local default is overwritten by the value in calling XSL (see xmlPrintSyItems.xslt).
+ */ -->  
  <!--
  /** @file
  * @version 28/11/2021 for SyMenu
@@ -63,15 +65,14 @@
  <!--
  /**
  * Pretty-prints XML as colorful tree, entry point.
- * Function (named template) to process a  XML (XSLT/XHTML) fragment. It produces in output an HTML lpc_fragment showing the code.@n
+ * Function (named template) to process a  XML (XSLT/XHTML) fragment. It produces in output an HTML <tt>lpc_fragment</tt> showing the code.@n
  * Great sample of "data-driven" style in XSLT transformation.
  *
  * @par Use:
  *       <tt>&lt;xsl:call-template  name="printCol" /&gt;</tt>
  *
  */ -->
-
-    <xsl:template name="printCol">
+     <xsl:template name="printCol">
         <div class="lpc_fragment">
             <xsl:apply-templates select="."
                                  mode="printCol" />
@@ -83,27 +84,33 @@
  * Generates tags with embedded css and Javascript.
  * Function (named template) to create <tt>&lt;style&gt;</tt> and <tt>&lt;script&gt;</tt> XHTML tags,
  * as required by HTML fragments build by xslt_libprintcol_template_01().<BR/>
- * Usually in <tt>&lt;HEAD></tt> tag, but works also in <tt>&lt;BODY></tt>.
+ * Usually in <tt>&lt;HEAD></tt> tag, but works also in <tt>&lt;BODY></tt>.<BR />
+ * note: Keep this css code in syncro with colCode.css.
  * @par Use:
  *      <tt> &lt;xsl:call-template  name="embeddedHeader" /&gt;</tt>
  *
- * @see xslt_libprintcol_template_03 for the use of external files.
+ * @see xslt_libprintcol2_template_03 for the use of external files.
  */  -->
    <xsl:template name="embeddedHeader">
+   
+     <xsl:text disable-output-escaping="yes">&lt;!-- /////////// START  EMBEDDED //////////////
+        copy next block before the HTML code in target BODY, or use external files in HEAD like:
+	       &lt;link href="include/colCode.css"  type="text/css"  rel="StyleSheet" />
+           &lt;script src="include/colCode.js"  type="text/javascript" >&lt;/script>
+      		  ////////////////////////////////////////////////////////// --&gt;</xsl:text>
+ 
             <style>
-    	  <!--
-      .lpc_fragment {font-size:10pt; font-family: "DejaVu Sans Mono", Courier, monospace;}
-	      -->
-                .b  {cursor:pointer; color:red; font-weight:bold; text-decoration:none; padding-right: 2px;}
-                .e  {border: 0px; margin: 0px 0px 0px 2em; text-indent:-1em;}
-                .en {color:#001a33} 
-                .an {color:#606060}
-                .av {color:#00264d}
-                .c  {color:#808080}
-                .t  {color:#004d99}
-			    .u  {color:#EE82EE}
-                .m  {color:navy}
-                .pi {color:#808080}
+                .ppclick   {cursor:pointer; color:red; font-weight:bold; text-decoration:none; padding-right: 2px;}
+                .ppblock   {border: 0px; margin: 0px 0px 0px 2em; text-indent:-1em;}
+                .ppitem    {color:#001a33;}
+				.ppname    {color:#2E86C1;}
+                .ppdesc    {color:#00264d; font-style: italic;}
+                .ppattname {color:#606060;}
+                .ppattval  {color:#004d99;}
+                .ppcomm    {color:#717D7E;}
+                .pptext    {color:#004d99;}
+                .ppsign    {color:#000080;}
+                .ppinstr   {color:#717D7E;}
                 pre {margin:0px;}
                 div {border:0; padding:0; margin:0;}
             </style>
@@ -113,12 +120,12 @@ function doClick(event) {
 
     var mark = window.event ?  window.event.srcElement:  event.target;
 
-    while ((mark.className != "b") && (mark.nodeName != "body")) {
+    while ((mark.className != "ppclick") && (mark.nodeName != "body")) {
         mark = mark.parentNode
     }
 
     var e = mark;
-    while ((e.className != "e") && (e.nodeName != "body")) {
+    while ((e.className != "ppblock") && (e.nodeName != "body")) {
         e = e.parentNode
     }
 
@@ -153,6 +160,8 @@ function doClick(event) {
 }
 ]]></xsl:comment>
       </script>
+    <xsl:text disable-output-escaping="yes">
+	&lt;!-- //////// END EMBEDDED /////////// --&gt;</xsl:text>
    </xsl:template>
 
 <!--
@@ -169,15 +178,20 @@ function doClick(event) {
  * @param name
  *      the template name, for direct call.
  * @param baseURL
- *  - If absent, generates relative URI, using "css/colCode.css" and "include/colCode.js".
- *  - Local baseURL for included css and Javascript (for IDE)@n
- *        <tt>file:///c:/o2xdl-30/HTML/</tt> @n
- *  - Remote baseURL for included css and Javascript (from web)):@n
- *        <tt>http://www.o2xdl.org/3.0/HTML/</tt>
+ *  - If absent, generates relative URI, using "include/colCode.css" and "include/colCode.js" for local files in
+ *         [SyMenu]/ProgramFiles/ms-symtools/result/include
+ *
+ *  - Local baseURL for file in any place: @n
+ *        e.g. <tt>file:///d:/my_data/HTML</tt> @n
+ *  - Remote baseURL to include css and Javascript from web:@n
+ *        e.g. <tt>http://www.o2xdl.org</tt> @n
+ *   note: You can use the files in http://www.o2xdl.org/include that I put in public domain for users convenience.
  *
  * @par Use:
- *    <tt>   &lt;xsl:call-template  name="includedHeader" &gt;@n
- *        &nbsp;&nbsp; &lt;xsl:with-param name="baseURL"&gt; http://www.o2xdl.org/3.0/HTML/ &lt;/xsl:with-param&gt;
+ *    <tt>   &lt;xsl:call-template  name="includedHeader" /&gt; </tt>  @n
+ * or:@n
+ *    <tt>   &lt;xsl:call-template  name="includedHeader" &gt;  @n
+ *        &nbsp;&nbsp; &lt;xsl:with-param name="baseURL"&gt;file:///d:/my_data/HTML<&lt;/xsl:with-param&gt;
  *       &lt;/xsl:call-template &gt;@n </tt>
  *
  * @see xslt_libprintcol_template_02 for standalone HTML.
@@ -186,15 +200,17 @@ function doClick(event) {
 
    <xsl:template name="includedHeader">
       <xsl:param name="baseURL">relative</xsl:param>
+	  <xsl:text disable-output-escaping="yes">&lt;!-- /////////// START INCLUDE (put it in HEAD) ////////////// --&gt; </xsl:text>
       <xsl:if test="$baseURL != 'relative'">
           <base href="{$baseURL}" />
       </xsl:if>
           <!-- uses URL relatives to baseURL (using base tag)-->
-      <link href="css/colCode.css"
+      <link href="include/colCode.css"
                       type="text/css"
                       rel="StyleSheet" />
       <script src="include/colCode.js"
                       type="text/javascript" ></script>
+ 	  <xsl:text disable-output-escaping="yes">&lt;!-- /////////// END INCLUDE ////////////// --&gt; </xsl:text>
    </xsl:template>
 
 
@@ -204,14 +220,14 @@ function doClick(event) {
  */  -->
     <xsl:template match="processing-instruction()"
                   mode="printCol">
-        <div class="e">
-            <span class="m">&lt;?</span>
-            <span class="pi">
+        <div class="ppblock">
+            <span class="ppsign">&lt;?</span>
+            <span class="ppinstr">
                 <xsl:value-of select="name(.)" />
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="." />
             </span>
-            <span class="m">?&gt;</span>
+            <span class="ppsign">?&gt;</span>
         </div>
     </xsl:template>
 
@@ -221,11 +237,13 @@ function doClick(event) {
  */ -->
     <xsl:template match="text()"
                   mode="printCol">
-        <div class="e">
-            <span class="t">
+	 <xsl:if test="not [.='']">
+        <div class="ppblock">
+            <span class="pptext">
                 <xsl:value-of select="." />
             </span>
         </div>
+		</xsl:if>
     </xsl:template>
 <!--
  /**
@@ -233,27 +251,27 @@ function doClick(event) {
  */  -->
     <xsl:template match="comment()"
                   mode="printCol">
-        <div class="e">
+        <div class="ppblock">
            <xsl:if test="$status='close'">
             <span>
-             <span class="b"
+             <span class="ppclick"
                   onclick="doClick(event)">+</span>
-             <span class="m">&lt;!--</span>
+             <span class="ppsign">&lt;!--</span>
             </span>
-            <div class="c" style="display:none" >
+            <div class="ppcomml" style="display:none" >
                 <pre><xsl:value-of select="." /></pre>
-                <span class="m">--&gt;</span>
+                <span class="ppsign">--&gt;</span>
              </div>
           </xsl:if>
           <xsl:if test="$status='open'">
            <span>
-             <span class="b"
+             <span class="ppclick"
                   onclick="doClick(event)">-</span>
-             <span class="m">&lt;!--</span>
+             <span class="ppsign">&lt;!--</span>
            </span>
-           <div class="c">
+           <div class="ppcomml">
                 <pre><xsl:value-of select="." /></pre>
-                <span class="m">--&gt;</span>
+                <span class="ppsign">--&gt;</span>
              </div>
             </xsl:if>
           
@@ -262,23 +280,28 @@ function doClick(event) {
 <!--
  /**
  * Formats attributes.
- * Added 'pre' only to documentation attribute.
+ * Special cases: 
+  * - documentation:  Added 'pre' 
+  * - name: class is ppname.
  */  -->
     <xsl:template match="@*"
                   mode="printCol">
-        <span class="an">
+        <span class="ppattname">
             <xsl:value-of select="name(.)" />
         </span>
-        <span class="m">="</span>
-        <span class="av">
-		    <xsl:if test="'description'= name(.)">
-                <i><pre><xsl:value-of select="." /></pre></i>
-		    </xsl:if>
-		    <xsl:if test="'description'!= name(.)">
-                <xsl:value-of select="." />
-		    </xsl:if>
-        </span>
-        <span class="m">"</span>
+        <span class="ppsign">="</span>
+		   <xsl:choose>
+              <xsl:when test="'description'= name(.)">
+			       <span class="ppdesc"> <pre><xsl:value-of select="." /></pre></span>
+              </xsl:when>
+              <xsl:when test="'name'= name(.)">
+			       <span class="ppname"><xsl:value-of select="." /></span>
+              </xsl:when>
+              <xsl:otherwise>
+  			       <span class="ppattval"><xsl:value-of select="." /></span>
+              </xsl:otherwise>
+          </xsl:choose>
+        <span class="ppsign">"</span>
         <xsl:if test="position()!=last()">
             <xsl:text> </xsl:text>
         </xsl:if>
@@ -291,9 +314,9 @@ function doClick(event) {
  */ -->
     <xsl:template match="*[not(node())]"
                   mode="printCol">
-        <div class="e">
-            <span class="m">&lt;</span>
-            <span class="en">
+        <div class="ppblock">
+            <span class="ppsign">&lt;</span>
+            <span class="ppitem">
                 <xsl:value-of select="name(.)" />
             </span>
             <xsl:if test="@*">
@@ -303,21 +326,28 @@ function doClick(event) {
                                  mode="printCol" />
             <xsl:apply-templates select="."
                                  mode="namespace" />
-            <span class="m">/&gt;</span>
+            <span class="ppsign">/&gt;</span>
         </div>
     </xsl:template>
      <!-- match elements with only text(), they are not closeable -->
   <!--
 /**
  * Formats elements with only text(), they are not closeable.
- * Added 'pre' only to documentation elements.
- *
+ * Special cases: 
+ * - documentation:  Added 'pre' 
+ * - name: class is ppname.
  */  -->
     <xsl:template match="*[text() and not(./*)]"
                   mode="printCol">
-        <div class="e">
-            <span class="m">&lt;</span>
-            <span class="en">
+  	   <xsl:if test="name(.)='SyContainer'">
+	            <xsl:text disable-output-escaping="yes">&lt;!-- ++++ START </xsl:text><xsl:value-of select="@name" /> <xsl:text disable-output-escaping="yes"> +++++++++++ --&gt;</xsl:text>
+                </xsl:if>
+ 	   <xsl:if test="(name(.)='SyFolder') or (name(.)='SyProgramCmd')or (name(.)='SySeparator')or (name(.)='SyLink')or (name(.)='SyDocument')or (name(.)='SySeparator') or (name(.)='SyLabel')">
+	            <xsl:text disable-output-escaping="yes">&lt;!-- .... start </xsl:text><xsl:value-of select="name(.)" /> <xsl:text disable-output-escaping="yes"> ............ --&gt;</xsl:text>
+                </xsl:if>
+      <div class="ppblock">
+            <span class="ppsign">&lt;</span>
+            <span class="ppitem">
                  <xsl:value-of select="name(.)" />
             </span>
             <xsl:if test="@*">
@@ -327,26 +357,33 @@ function doClick(event) {
                                  mode="printCol" />
             <xsl:apply-templates select="."
                                  mode="namespace" />
-            <span class="m">
+            <span class="ppsign">
                 <xsl:text>&gt;</xsl:text>
             </span>
-            <span class="t">
-			   <xsl:if test="name(.)='description'">
-                 <i><pre><xsl:value-of select="." /></pre></i>
-		      </xsl:if>
-		      <xsl:if test="not(name(.)='description')">
-                  <xsl:value-of select="." />
-		      </xsl:if>
-            </span>
-            <span class="m">&lt;/</span>
-            <span class="en">
+			
+		    <xsl:choose>
+				  <xsl:when test="'description'=name(.)">
+					   <span class="ppdesc"><pre><xsl:value-of select="." /></pre></span>
+				  </xsl:when>
+				  <xsl:when test="'name'= name(.)">
+					   <span class="ppname"><xsl:value-of select="." /></span>
+				  </xsl:when>
+				  <xsl:otherwise>
+					   <span class="pptext"><xsl:value-of select="." /></span>
+				  </xsl:otherwise>
+			</xsl:choose>
+            <span class="ppsign">&lt;/</span>
+            <span class="ppitem">
                 <xsl:value-of select="name(.)" />
             </span>
-            <span class="m">
+            <span class="ppsign">
                 <xsl:text>&gt;</xsl:text>
             </span>
         </div>
-    </xsl:template>
+  	   <xsl:if test="name(.)='SyContainer'">
+                <xsl:text disable-output-escaping="yes">&lt;!-- ==== END </xsl:text><xsl:value-of select="@name" /> <xsl:text disable-output-escaping="yes"> =========== --&gt;</xsl:text>
+                </xsl:if>
+   </xsl:template>
  <!--
  /**
  * Formats not empty nodes.
@@ -354,18 +391,24 @@ function doClick(event) {
  */  -->
     <xsl:template match="*[*]"
                   mode="printCol">
-        <div class="e">
-            <div>
+	   <xsl:if test="name(.)='SyContainer'">
+	            <xsl:text disable-output-escaping="yes">&lt;!-- ++++ START </xsl:text><xsl:value-of select="@name" /> <xsl:text disable-output-escaping="yes"> +++++++++++ --&gt;</xsl:text>
+                </xsl:if>
+	   <xsl:if test="(name(.)='SyFolder') or (name(.)='SyProgramCmd') or (name(.)='SySeparator')or (name(.)='SyLink')or (name(.)='SyDocument')or (name(.)='SySeparator') or (name(.)='SyLabel')">
+		        <xsl:text disable-output-escaping="yes">&lt;!-- .... start </xsl:text><xsl:value-of select="name(.)" /> <xsl:text disable-output-escaping="yes"> ........... --&gt;</xsl:text>
+             </xsl:if>
+       <div class="ppblock">
+           <div>
                 <xsl:if test="$status='close'">
-                   <span class="b"
+                   <span class="ppclick"
                       onclick="doClick(event)">+</span>
                 </xsl:if>
                 <xsl:if test="$status='open'">
-                   <span class="b"
+                   <span class="ppclick"
                       onclick="doClick(event)">-</span>
                 </xsl:if>
-                <span class="m">&lt;</span>
-                <span class="en">
+                <span class="ppsign">&lt;</span>
+                <span class="ppitem">
                      <xsl:value-of select="name(.)" />
                 </span>
                 <xsl:if test="@*">
@@ -375,7 +418,7 @@ function doClick(event) {
                                      mode="printCol" />
                 <xsl:apply-templates select="."
                                      mode="namespace" />
-                <span class="m">
+                <span class="ppsign">
                     <xsl:text>&gt;</xsl:text>
                 </span>
             </div>
@@ -384,11 +427,11 @@ function doClick(event) {
               <!-- children nodes processing -->
                   <xsl:apply-templates mode="printCol" />
                   <div>
-                      <span class="m">&lt;/</span>
-                      <span class="en">
+                      <span class="ppsign">&lt;/</span>
+                      <span class="ppitem">
                           <xsl:value-of select="name(.)" />
                       </span>
-                      <span class="m">
+                      <span class="ppsign">
                           <xsl:text>&gt;</xsl:text>
                       </span>
                   </div>
@@ -399,11 +442,11 @@ function doClick(event) {
               <!-- children nodes processing -->
                   <xsl:apply-templates mode="printCol" />
                   <div>
-                      <span class="m">&lt;/</span>
-                      <span class="en">
+                      <span class="ppsign">&lt;/</span>
+                      <span class="ppitem">
                           <xsl:value-of select="name(.)" />
                       </span>
-                      <span class="m">
+                      <span class="ppsign">
                           <xsl:text>&gt;</xsl:text>
                       </span>
                   </div>
@@ -411,7 +454,10 @@ function doClick(event) {
             </xsl:if>
  
         </div>
-    </xsl:template>
+ 	   <xsl:if test="name(.)='SyContainer'">
+                <xsl:text disable-output-escaping="yes">&lt;!-- ==== END </xsl:text><xsl:value-of select="@name" /> <xsl:text disable-output-escaping="yes"> =========== --&gt;</xsl:text>
+                </xsl:if>
+  </xsl:template>
    <!--
  /**
  * Formats namespaces.
@@ -435,18 +481,18 @@ function doClick(event) {
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:text> </xsl:text>
-                    <span class="an">
+                    <span class="ppattname">
                         <xsl:text>xmlns</xsl:text>
                         <xsl:if test="$nsprefix">
                             <xsl:text>:</xsl:text>
                             <xsl:value-of select="$nsprefix" />
                         </xsl:if>
                     </span>
-                    <span class="m">="</span>
-                    <span class="av">
+                    <span class="ppsign">="</span>
+                    <span class="ppattval">
                         <xsl:value-of select="." />
                     </span>
-                    <span class="m">"</span>
+                    <span class="ppsign">"</span>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:for-each>
