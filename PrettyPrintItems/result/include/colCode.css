@@ -1,0 +1,14 @@
+                .ppclick   {cursor:pointer; color:red; font-weight:bold; text-decoration:none; padding-right: 2px;}
+                .ppblock   {border: 0px; margin: 0px 0px 0px 2em; text-indent:-1em;}
+                .ppitem    {color:#001a33;}
+				.ppname    {color:#2E86C1;}
+                .ppdesc    {color:#00264d; font-style: italic;}
+                .ppattname {color:#606060;}
+                .ppattval  {color:#004d99;}
+                .ppcomm    {color:#717D7E;}
+                .pptext    {color:#004d99;}
+                .ppsign    {color:#000080;}
+                .ppinstr   {color:#717D7E;}
+                pre {margin:0px;}
+                div {border:0; padding:0; margin:0;}
+                    
