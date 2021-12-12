@@ -11,9 +11,9 @@ For more info you can download the **prettyPrimt SyMenu** help (file *prettyPrin
 
 **Versions:**
 2.0 beta
-    - removed dependencies by including all required files
-    - compatibility with all customized Sy_Menu installations (using -fc or -fp)
-    - user instructions added to HTML
-    - free HTML include file policy: standalone, local, remote.
+ - removed dependencies by including all required files
+ - compatibility with all customized Sy_Menu installations (using -fc or -fp)
+ - user instructions added to HTML
+ - free HTML include file policy: standalone, local, remote.
 
 1.0  alfa
