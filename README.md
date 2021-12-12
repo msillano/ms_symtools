@@ -8,7 +8,6 @@
 **Installation** (same for all ms-symtools)
 
  - Unzip the distribution file in dir <code>[SyMenu]\Programfile</code>, so you get: <code>[SyMenu]\Programfile\sm-symtools\xxx.xxx</code>
- - Look at the help file <code>tool-name.chm</code> for specific preconditions,  instructions, etc..  
- Start from the main file: <a class="el" href="pretty_print_items_8bat.html#details" target="_self">prettyPrintItems.bat</a>
+ - Look at the help file <code>tool-name.chm</code> for specific preconditions,  instructions, etc., starting from the main file, e.g. prettyPrintItems.bat.
 
 
