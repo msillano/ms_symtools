@@ -15,7 +15,7 @@ For more info you can download the **prettyPrimt SyMenu** help (file *prettyPrin
  - removed dependencies by including all required files
  - compatibility with all customized Sy_Menu installations (using -fc or -fp)
  - branch extraction guides added to HTML
- - free HTML include file policy: standalone, local, remote.
+ - open CSS and js files policy: standalone, local, remote.
 
 1.0  alfa
  - initial version
