@@ -12,7 +12,7 @@ For more info you can download the **prettyPrimt SyMenu** help (file *prettyPrin
 **Versions:**
 
 2.1 beta
- - renamed prettyPrintItems.hide.vbs to more general: runtools.hide.vbs
+ - renamed prettyPrintItems.hide.vbs to more general: *runtools.hide.vbs*
  - updated help
 
 2.0 beta
