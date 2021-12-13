@@ -100,7 +100,7 @@
 					<xsl:apply-templates select="." mode="printCol"/>
 					<br/>
 				</div><br />
-				<small>by <b>prettyPrint SyMenu v.2.0 (beta)</b>&#xa0;&#xa0;&#xa0;&#169;2021 <i>Marco Sillano</i></small>
+				<small>by <b>prettyPrint SyMenu v.2.1 (beta)</b>&#xa0;&#xa0;&#xa0;&#169;2021 <i>Marco Sillano</i></small>
 			</body>
 		</html>
 	</xsl:template>
