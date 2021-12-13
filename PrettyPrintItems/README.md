@@ -11,6 +11,10 @@ For more info you can download the **prettyPrimt SyMenu** help (file *prettyPrin
 
 **Versions:**
 
+2.1 beta
+ - renamed prettyPrintItems.hide.vbs to more general: runtools.hide.vbs
+ - updated help
+
 2.0 beta
  - removed dependencies by including all required files
  - compatibility with all customized Sy_Menu installations (using -fc or -fp)
