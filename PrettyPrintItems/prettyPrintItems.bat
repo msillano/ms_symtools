@@ -91,7 +91,7 @@ rem file doc (for doxygen)
 :: */
 
 ::/** @file
-:: * @version 2.0 12/12/21 (beta) tested on Windows 11 Pro (21H2), java  17.0.1 and SyMenu  6.16.7962 [2021.10.19]
+:: * @version 2.1 13/12/21 (beta) tested on Windows 11 Pro (21H2), java  17.0.1 and SyMenu  6.16.7962 [2021.10.19]
 :: * @author Copyright 2021 Marco Sillano.
 :: */
 rem code doc
@@ -141,13 +141,13 @@ rem ECHO test1   "%1"
 if EXIST "%CONFIGFILE%"  goto continue
 :: ERROR: the SyMenuItem.zip file  not found.
 ECHO Pretty Printer ERROR: the SyMenuItem.zip file [%CONFIGFILE%] not found.
-IF .%1==. (ECHO %ERRMSG1% > %OUTFILE%) ELSE (ECHO %ERRMSG2% > %OUTFILE%)
+IF .%1==. (ECHO %ERRMSG1% > "%OUTFILE%") ELSE (ECHO %ERRMSG2% > "%OUTFILE%")
 goto :showout
 :continue
 :: :: ================= STEP 1: UNZIP (using 7.zip)
 :: ref: https://www.dotnetperls.com/7-zip-examples;  7z.exe path is: [SyMenu]/Lib/7z.exe. 
 set EXE7ZFILE=./Lib/7z.exe
-%EXE7ZFILE% x "%CONFIGFILE%" -aoa -o%TMP%  >NUL
+"%EXE7ZFILE%" x "%CONFIGFILE%" -aoa -o%TMP%  >NUL
 :: :: ================= STEP 2: UTF_16LE  => UTF_8noBOM (xmlfilter parser don't process UTF_16LE)
 :: ref: https://stackoverflow.com/questions/265370/utf-16-to-utf-8-conversion-for-scripting-in-windows
 powershell -c "(Get-Content %TMP%/SyMenuItem.xml)|ForEach-Object {$_ -Replace 'UTF-16', 'UTF-8' }|Set-Content %TMP%/SyMenuItem8.xml"
