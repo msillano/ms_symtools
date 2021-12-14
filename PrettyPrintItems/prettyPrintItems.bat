@@ -145,7 +145,7 @@ IF .%1==. (ECHO %ERRMSG1% > "%OUTFILE%") ELSE (ECHO %ERRMSG2% > "%OUTFILE%")
 goto :showout
 :continue
 :: :: ================= STEP 1: UNZIP (using 7.zip)
-:: ref: https://www.dotnetperls.com/7-zip-examples;  7z.exe path is: [SyMenu]/Lib/7z.exe. 
+:: ref: https://www.dotnetperls.com/7-zip-examples;  7z.exe path is: [BATPATH]/Lib/7z.exe. 
 set EXE7ZFILE=./Lib/7z.exe
 "%EXE7ZFILE%" x "%CONFIGFILE%" -aoa -o%TMP%  >NUL
 :: :: ================= STEP 2: UTF_16LE  => UTF_8noBOM (xmlfilter parser don't process UTF_16LE)
