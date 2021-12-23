@@ -5,7 +5,7 @@
 *Of course, the **ms_symtool** tools have been created based on my needs and are often not quite 'user-friendly', but I think they can also be useful for other experienced users with similar problems. For this, they are Open Source and the latest version is available on [GitHub](https://github.com/msillano/ms_symtools "Public repository").*
 
 -------------------------------
-[**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/PrettyPrintItems  "Download from GitHub") is a tool that export and import the SyMenu structure to/from *markdown* files. This allows for easily management of large menus. By editing an *MD* file you can update and reorganize the menu tree, change names and edit tooltips for all items. 
+[**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub") is a tool that export and import the SyMenu structure to/from *markdown* files. This allows for easily management of large menus. By editing an *MD* file you can update and reorganize the menu tree, change names and edit tooltips for all items. 
 
 A simple example, using the branch ['This PC[DESKTOP-LFGU1S1]'](https://www.ugmfree.it/Forum/messages.aspx?TopicID=830) can help: 
 
@@ -22,16 +22,15 @@ The `SyMenu2MDexport` tool transforms the SyMenu info in a *Markdown file*, easy
 
 ![Markdown edit](https://github.com/msillano/ms_symtools/blob/main/img/fig011.jpg?raw=true)
 
-
-The MD format as been chose to get 2 goals:
+The MD format was chosen to achieve 2 goals:
 
 - Easy to modify by the user
 - Produce a HTML good feedback, more customizable using CSS.
 
 ### Edit MD
-Now the user can reorganize the menu tree, with a cut&paste in MD. Can add Containers, Separators and Labels and update the Items description.
+Now the user can reorganize the menu tree, with a cut&paste in MD. Can add Containers, Separators and Labels and update the Items name or description.
 
-If descriptions are used as tooltip content, as I do with my menus, it help to keep then not too big. Since the description is seachable from SyMenu, you need to choose the included keywords carefully.
+If descriptions are used as tooltip content, as I do with my menus, it helps to keep then not too big. Since the description is seachable from SyMenu, you need to choose the included keywords carefully.
 
 The details of MD editing rules are in the file `MD-for-SyMenu.md.` 
 
