@@ -18,15 +18,14 @@ This structure was created using the SyMenu features: it offers a tree for the m
 This all works very well, but I fond an alternative way to handle the menu structure and Items descriptions that can help the user in some cases.
 
 ### Export to MD ##
-The `SyMenu2MDexport` tool transforms the SyMenu info in a *Markdown file*, easy handled by MarkdownPad2. see:
+The `SyMenu2MDexport` tool transforms the SyMenu info in a *Markdown file*, easy handled by MarkdownPad2.
 
 ![Markdown edit](https://github.com/msillano/ms_symtools/blob/main/img/fig011.jpg?raw=true)
-
 
 The MD format as been chose to get 2 goals:
 
 - Easy to edit by the user
-- Produce a nice HTML documentation, more customizable using CSS.
+- Innediate HTML feedback, more customizable using CSS.
 
 ### Edit MD
 Now the user can reorganize the menu tree, with a cut&paste in MD. It can add Container, Separator and Labels and update the Items description.
@@ -49,7 +48,7 @@ Done.
 notes:
 
  - The use of MarkdownPad2 is mandatory: I tested many MD editors, and the transformation MD->HTML is handled in different ways by different programs. As extra, MarkdownPad2 offers an easy management of CSS, also on free version, useful to change the look of the HTML output.
- - The default installation uses the locale windows char set. To have a 'international' version, that handle all Unicode chars in the same document, you must upgrade to SAXON XSLT engine.
+ - The default installation uses the locale windows char set. To have an 'international' version, that handle all Unicode chars in the same document, you must upgrade to SAXON XSLT engine.
 
 
 
