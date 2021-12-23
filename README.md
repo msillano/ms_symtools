@@ -9,7 +9,7 @@
 >  Gets a snapshot from the file SyMenuItem.zip, with all the data of the nodes currently present in the SyMenu menu and presents them, in the form of a complete tree, in a dynamic HTML page. Fragments can be cut and inserted in custom pages.
 
  **MD exchange**
-> This tool exports and imports the SyMenu structure to/from markdown files. This allows for easily management of large menus: by editing the MD file you can update and reorganize the menu tree, change names and edit tooltips for all items.
+> This tool exports and imports the SyMenu structure to/from markdown files. This allows for easily management of large menus: by editing the MD file you can update and reorganize the menu tree, change names and edit descriptions for all items.
 
 --------------------------------------
 **Installation** (same for all ms-symtools)
