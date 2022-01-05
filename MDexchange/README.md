@@ -47,7 +47,7 @@ The details of MD editing rules are in the file `MD-for-SyMenu.md.`
 ### Import MD to SyMenu
 Once the edit phase is complete, the user must save the updated file. In MarkdownPad2: *file|Export|Export HTML*.
 
-The `MD2SyMenuImport` tool keeps the file HTML exported by *MarkdownPad2* and merge it into the existing `SyMenuItem.zip` file, updating all changed menu items  in one step.
+The `MD2SyMenuImport` tool keeps the file HTML exported by *MarkdownPad2* and merge it back into the existing `SyMenuItem.zip` file, updating all changed menu items,  in one step.
 
 One feature is that you can update the full menu or just a branch. Delete all lines before and after the area of interest, to obtain the required branch as root node: the 'import' will replace the old menu branch with the new version. 
 
