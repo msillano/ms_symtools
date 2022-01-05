@@ -57,7 +57,7 @@ Done.
 
 notes:
 
- - The use of MarkdownPad2 is mandatory: I have tested many MD editors, and the transformation MD->HTML is handled in different ways by different programs. As an extra, MarkdownPad2 offers an easy CSS management, even in the free version, which is useful for changing the look of the HTML output.
+ - The use of MarkdownPad2 is mandatory: I have tested many MD editors, and the transformation MD->HTML is handled in different ways by different programs. As an extra, MarkdownPad2 offers a visible feedback with an easy CSS management, even in the free version, which is useful for changing the look of the HTML output. If you like, you can use a more feautured editor to edit the MD file (e.g. Notepad++) but it is mandatory to load in MarkdownPad2 the edited file to make the export to (X)HTML.
 
 
 --------------------------------------
