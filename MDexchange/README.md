@@ -7,15 +7,25 @@
 -------------------------------
 [**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub") is a tool that export and import the SyMenu structure to/from *markdown* files. This allows for easily management of large menus. By editing an *MD* file you can update and reorganize the menu tree, change names and edit tooltips for all items. 
 
+The origin of this solution bemes from away. I like *SyMenu* for the *tooltips*: between the *'Start Menu'* replacements this is an unique feature. Why I like tooltips? Because I use many programs, but not in regular basis, so the tooltips are an useful help to remeber info about programs and features, documentations and workflows.
+
+How to edit SyMenu Configuration? SyMenu offers a tree for managing the menu structure and 'ad hoc' forms for configuring items. Faster, a file can be drag&drop onto the SyMenu Icon and a new item is added to menu. You can also do a 'Batch Import' whitch scans a folder and adds all executables files. Enough? Yes... and not. I have also the esigence of a way more global, not so detailed as the forms, but not so simple as the SyMenu Tree. 
+
+L'option to edit directly the SyMenuItem in XML, with a specializzated editor is too verbose and full of details: not viable. The XML is useful for documentation: see prettyPrintMenu.
+
+The baisic idea is to use the Markdown, very less verbose than XML, to define only some important (for me) aspects of SyMenu: the buildig of large tree, the tuning of tootips, in general the visible parts of a menu, in a fast and economical way.
+
+In any case this is a new option for power users: now you can also use this way to edit and tuning the SyMenu structures, one more alternative. Use it if and when you find it useful and advantageous.
+
 A simple example, using the branch ['This PC[DESKTOP-LFGU1S1]'](https://www.ugmfree.it/Forum/messages.aspx?TopicID=830) can help: 
 
 ![Menu branch](https://github.com/msillano/ms_symtools/blob/main/img/fig101.jpg?raw=true)
    
-This structure was created using the SyMenu features: it offers a tree for managing the menu structure and 'ad hoc' forms for configuring items. Faster, a file can be drag&drop onto the SyMenu Icon and a new item is added to menu. You can also do a 'Batch Import' whitch scans a folder and adds all executables files.
+This structure was created using the SyMenu features.
 
 ![SyMenu form](https://github.com/msillano/ms_symtools/blob/main/img/fig010.jpg?raw=true)
 
-It all works very well, but I found an alternative way to manage the menu structure and item descriptions which can help the user in some cases.
+The alternative I propose is based on 3 steps:
 
 ### Export to MD ##
 The `SyMenu2MDexport` tool transforms the SyMenu info in a *Markdown file*, easy manageable by MarkdownPad2.
@@ -25,7 +35,7 @@ The `SyMenu2MDexport` tool transforms the SyMenu info in a *Markdown file*, easy
 The MD format was chosen to achieve 2 goals:
 
 - Easy to modify by the user
-- Produce a HTML good feedback, more customizable using CSS.
+- Produce a HTML good visual feedback, further customizable using CSS.
 
 ### Edit MD
 Now the user can reorganize the menu tree, with a cut&paste in MD. Can add Containers, Separators and Labels and update the Items name or description.
@@ -48,9 +58,6 @@ Done.
 notes:
 
  - The use of MarkdownPad2 is mandatory: I have tested many MD editors, and the transformation MD->HTML is handled in different ways by different programs. As an extra, MarkdownPad2 offers an easy CSS management, even in the free version, which is useful for changing the look of the HTML output.
- - The default installation uses the local windows char set. To have an 'international' version, which handles all Unicode characters in the same document, you must upgrade to SAXON XSLT engine.
-
-
 
 
 --------------------------------------
