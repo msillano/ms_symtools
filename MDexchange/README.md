@@ -9,13 +9,13 @@
 
 The origin of this solution bemes from away. I like *SyMenu* for the *tooltips*: between the *'Start Menu'* replacements this is an unique feature. Why I like tooltips? Because I use many programs, but not in regular basis, so the tooltips are an useful help to remeber info about programs and features, documentations and workflows.
 
-How to edit SyMenu Configuration? SyMenu offers a tree for managing the menu structure and 'ad hoc' forms for configuring items. Faster, a file can be drag&drop onto the SyMenu Icon and a new item is added to menu. You can also do a 'Batch Import' whitch scans a folder and adds all executables files. Enough? Yes... and not. I have also the esigence of a way more global, not so detailed as the forms, but not so simple as the SyMenu Tree. 
+How to edit SyMenu Configuration? SyMenu offers a tree for managing the menu structure and 'ad hoc' forms for configuring items. Faster, a file can be drag&drop onto the SyMenu Icon and a new item is added to menu. You can also do a 'Batch Import' whitch scans a folder and adds all executables files. Enough? Yes... and not. I have also the esigence of a way more global, not so detailed and punctual as the forms, but not so simple and skeletal as the SyMenu Tree view. 
 
-L'option to edit directly the SyMenuItem in XML, with a specializzated editor is too verbose and full of details: not viable. The XML is useful for documentation: see prettyPrintMenu.
+L'option to edit directly the SyMenuItem in XML, maybe with a specializzated editor is too verbose and full of details: not viable. The XML is useful for documentation pourposes: see prettyPrintMenu.
 
-The baisic idea is to use the Markdown, very less verbose than XML, to define only some important (for me) aspects of SyMenu: the buildig of large tree, the tuning of tootips, in general the visible parts of a menu, in a fast and economical way.
+The baisic idea here is to use the Markdown, very less verbose than XML, to define only some important (for me) aspects of SyMenu: the buildig of large trees, the tuning of tootips, in general the visible parts of the menu, in a fast and economical way.
 
-In any case this is a new option for power users: now you can also use this way to edit and tuning the SyMenu structures, one more alternative. Use it if and when you find it useful and advantageous.
+In any case this is a new option for power users: now you can also use this way to edit and service the SyMenu structures, one more alternative. Use it if and when you find useful and advantageous.
 
 A simple example, using the branch ['This PC[DESKTOP-LFGU1S1]'](https://www.ugmfree.it/Forum/messages.aspx?TopicID=830) can help: 
 
@@ -51,7 +51,7 @@ The `MD2SyMenuImport` tool keeps the file HTML exported by *MarkdownPad2* and me
 
 One feature is that you can update the full menu or just a branch. Delete all lines before and after the area of interest, to obtain the required branch as root node: the 'import' will replace the old menu branch with the new version. 
 
-*Perhaps the best use of this tool is the creation of big classification tree, in the case of reorganizations of your SyMenu. In case of large menus it is mandatory to have a robust tree hierarchy, which can be updated gradually, even before reaching Drakkn's [more than 3'000+ programs](https://www.ugmfree.it/Forum/messages.aspx?TopicID=817)* :).
+*Perhaps the best use of this tool is the creation of big classification tree, in the case of reorganizations of your SyMenu. (e.g. creation of a SyMenu specialozed in Multimedia). In case of large menus it is mandatory to have a robust tree hierarchy, which then can be updated gradually, even before reaching Drakkn's [more than 3'000+ Items](https://www.ugmfree.it/Forum/messages.aspx?TopicID=817)* :).
 
 Done.
 
