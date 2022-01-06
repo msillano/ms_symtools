@@ -44,6 +44,8 @@ The `MD2SyMenuImport` tool keeps the file HTML exported by *MarkdownPad2* and me
 
 One feature is that you can update the full menu or just a branch. Delete all lines before and after the area of interest, to obtain the required branch as root node: the 'import' will replace the old menu branch with the new version. 
 
+Or you can esport only items, into a flat list. After edit, the 'import' replaces all updated items in the rigth place of the tree.
+
 *Perhaps the best use of this tool is the creation of big classification tree, in the case of reorganizations of your SyMenu. (e.g. creation of a SyMenu specialozed in Multimedia). In case of large menus it is mandatory to have a robust tree hierarchy, which then can be updated gradually, even before reaching Drakkn's [more than 3'000+ Items](https://www.ugmfree.it/Forum/messages.aspx?TopicID=817)* :).
 
 Done.
