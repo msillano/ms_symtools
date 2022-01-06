@@ -7,7 +7,7 @@
 -------------------------------
 *Available Tools:*
 
-[**prettyPrint SyMenu**](https://github.com/msillano/ms_symtools/tree/main/PrettyPrintItems  "Download from GitHub") (<tt>prettyPrintItems.bat</tt>) is a tool that extracts a snapshot from the file <code>SyMenuItem.zip</code>, with all the data of the nodes currently present in the **SyMenu** menu and presents them, in the form of a complete tree, in a dynamic HTML page. This allows you to easily handle menus of any size and complexity. 
+[**SyMenu prettyPrint**](https://github.com/msillano/ms_symtools/tree/main/PrettyPrintItems  "Download from GitHub") (<tt>prettyPrintItems.bat</tt>) is a tool that extracts a snapshot from the file <code>SyMenuItem.zip</code>, with all the data of the nodes currently present in the **SyMenu** menu and presents them, in the form of a complete tree, in a dynamic HTML page. This allows you to easily handle menus of any size and complexity. 
 
 *Under development*
 
