@@ -10,6 +10,13 @@ For more info you can download the **prettyPrimt SyMenu** help (file *prettyPrin
 
 
 **Versions:**
+2.2 beta
+ - Updated to SyMenu 7.00.8038 [2022.01.03]
+ - Removed *runtools.hide.vbs* (obsolete), "xmlfilter.jar" (replaced by SAXON)
+ - Added in lib SAXON_HE (advantages: internationalization, UTF-16)
+ - Added commad line parameters
+ - Added log, error checks
+ - Code cleanup, help update
 
 2.1 beta
  - renamed prettyPrintItems.hide.vbs to more general: *runtools.hide.vbs*
