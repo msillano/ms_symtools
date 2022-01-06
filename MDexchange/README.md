@@ -52,6 +52,6 @@ Done.
 
 notes:
 
- - Using **MarkdownPad2** is mandatory: I have tested many MD editors, and the MD->HTML  transformation is handled in different ways by different programs. As an extra, MarkdownPad2 offers visible feedback with easy CSS handling, even in the free version, useful for changing the look of HTML output. If you like, you can use a multi-featured editor to edit the MD file (e.g. Notepad++) but it is mandatory to load  the edited file in MarkdownPad2 for export to (X)HTML.
-
 - Using **MDexchange** is safe, as it makes a backup before any changes to SyMenuItem.zip. The simple **SyMenuUndo.bat** tool can restore SyMenuItem.zip from the last backup.
+
+- Using **MarkdownPad2** is mandatory: I have tested many MD editors, and the MD->HTML  transformation is handled in different ways by different programs. As an extra, MarkdownPad2 offers visible feedback with easy CSS handling, even in the free version, useful for changing the look of HTML output. If you like, you can use a multi-featured editor to edit the MD file (e.g. Notepad++) but it is mandatory to load  the edited file in MarkdownPad2 for export to (X)HTML.
