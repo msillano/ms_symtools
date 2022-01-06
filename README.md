@@ -5,13 +5,15 @@
 *Of course, the **ms_symtool** tools have been created based on my needs and are often not quite 'user-friendly', but I think they can also be useful for other experienced users with similar problems. For this, they are Open Source and the latest version is available on [GitHub](https://github.com/msillano/ms_symtools "Public repository").*
 
 -------------------------------
-###Tools avalaible:
+*Available Tools:*
 
 [**prettyPrint SyMenu**](https://github.com/msillano/ms_symtools/tree/main/PrettyPrintItems  "Download from GitHub") (<tt>prettyPrintItems.bat</tt>) is a tool that extracts a snapshot from the file <code>SyMenuItem.zip</code>, with all the data of the nodes currently present in the **SyMenu** menu and presents them, in the form of a complete tree, in a dynamic HTML page. This allows you to easily handle menus of any size and complexity. 
 
-[**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub") is a tool that export and import the SyMenu structure to/from *markdown* files. This allows for easily management of large menus. By editing an *MD* file you can update and reorganize the menu tree, change names and edit tooltips for all items. (under development)
+*Under development*
 
-[**menuUndo.bat**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub") Included in **MDexchange** this simple tool restores SyMenuItem.zip from the most recent backup. (under development)
+[**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub") is a tool that export and import the SyMenu structure to/from *markdown* files. This allows for easily management of large menus. By editing an *MD* file you can update and reorganize the menu tree, change names and edit tooltips for all items. 
+
+[**menuUndo.bat**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub") Included in **MDexchange** this simple tool restores SyMenuItem.zip from the most recent backup.
 
 
 --------------------------------------
