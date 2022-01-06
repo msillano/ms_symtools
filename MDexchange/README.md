@@ -52,14 +52,6 @@ Done.
 
 notes:
 
- - The use of MarkdownPad2 is mandatory: I have tested many MD editors, and the transformation MD->HTML is handled in different ways by different programs. As an extra, MarkdownPad2 offers a visible feedback with an easy CSS management, even in the free version, which is useful for changing the look of the HTML output. If you like, you can use a more feautured editor to edit the MD file (e.g. Notepad++) but it is mandatory to load in MarkdownPad2 the edited file to make the export to (X)HTML.
+ - Using **MarkdownPad2** is mandatory: I have tested many MD editors, and the MD->HTML  transformation is handled in different ways by different programs. As an extra, MarkdownPad2 offers visible feedback with easy CSS handling, even in the free version, useful for changing the look of HTML output. If you like, you can use a multi-featured editor to edit the MD file (e.g. Notepad++) but it is mandatory to load  the edited file in MarkdownPad2 for export to (X)HTML.
 
-
---------------------------------------
-**Installation** (same for all ms-symtools)
-
- - Unzip the distribution file in dir <code>[SyMenu]/Programfile</code>, so you get: <code>[SyMenu]/Programfile/sm-symtools/xxx.xxx</code>
- - Look at the help file <code>tool-name.chm</code> for specific preconditions,  istructions, etc..  
- Start from the main file: <a class="el" href="pretty_print_items_8bat.html#details" target="_self">prettyPrintItems.bat</a>
-
-
+- Using **MDexchange** is safe, as it makes a backup before any changes to SyMenuItem.zip. The simple **SyMenuUndo.bat** tool can restore SyMenuItem.zip from the last backup.
