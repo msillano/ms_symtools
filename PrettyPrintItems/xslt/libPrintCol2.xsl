@@ -28,16 +28,12 @@
     modified 28/11/21 by M. Sillano for SyMenu (CSS)
 	
  -->
-
-<xsl:stylesheet version="1.0"
-            xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-            xmlns="http://www.w3.org/1999/xhtml">
-
-   <!-- 
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml">
+    <!-- 
      Controls the default initial status of the XML tree
-                       status='open'|'close' -->
-    <xsl:param name="status">open</xsl:param>
- <!--
+                       STATUS='open'|'close' -->
+    <xsl:param name="STATUS">open</xsl:param>
+    <!--
  /** @file
  *  This is a XSLT library (template collection). 
  *  Pretty-prints XML/XHTML files/nodes as a collapsible tree with syntax color highlighting.
@@ -48,21 +44,19 @@
  * @note This file is a version modified of filters_dox/bin/xslt/libPrintCol.xsl.
  * Some comments are added to help the HTML reuse.
  */ -->
- 
- <!--
+    <!--
  /** 
- * @var status  *
+ * @var STATUS  *
  * @details Controls the default initial look of the XML tree: accepts 'open'|'close' 
  *  This local default is overwritten by the value in calling XSL (see xmlPrintSyItems.xslt).
- */ -->  
- <!--
+ */ -->
+    <!--
  /** @file
  * @version 28/11/2021 for SyMenu
  * @author   Copyright 1999-2004 The Apache Software Foundation @n
  *           Modified by Marco Sillano (marco.sillano(at)gmail.com).
  */  -->
-
- <!--
+    <!--
  /**
  * Pretty-prints XML as colorful tree, entry point.
  * Function (named template) to process a  XML (XSLT/XHTML) fragment. It produces in output an HTML <tt>lpc_fragment</tt> showing the code.@n
@@ -72,14 +66,12 @@
  *       <tt>&lt;xsl:call-template  name="printCol" /&gt;</tt>
  *
  */ -->
-     <xsl:template name="printCol">
+    <xsl:template name="printCol">
         <div class="lpc_fragment">
-            <xsl:apply-templates select="."
-                                 mode="printCol" />
+            <xsl:apply-templates select="." mode="printCol"/>
         </div>
     </xsl:template>
-
- <!--
+    <!--
  /**
  * Generates tags with embedded css and Javascript.
  * Function (named template) to create <tt>&lt;style&gt;</tt> and <tt>&lt;script&gt;</tt> XHTML tags,
@@ -91,15 +83,13 @@
  *
  * @see xslt_libprintcol2_template_03 for the use of external files.
  */  -->
-   <xsl:template name="embeddedHeader">
-   
-     <xsl:text disable-output-escaping="yes">&lt;!-- /////////// START  EMBEDDED //////////////
+    <xsl:template name="embeddedHeader">
+        <xsl:text disable-output-escaping="yes">&lt;!-- /////////// START  EMBEDDED //////////////
         copy next block before the HTML code in target BODY, or use external files in HEAD like:
 	       &lt;link href="include/colCode.css"  type="text/css"  rel="StyleSheet" />
            &lt;script src="include/colCode.js"  type="text/javascript" >&lt;/script>
       		  ////////////////////////////////////////////////////////// --&gt;</xsl:text>
- 
-            <style>
+        <style>
                 .ppclick   {cursor:pointer; color:red; font-weight:bold; text-decoration:none; padding-right: 2px;}
                 .ppblock   {border: 0px; margin: 0px 0px 0px 2em; text-indent:-1em;}
                 .ppitem    {color:#001a33;}
@@ -114,7 +104,8 @@
                 pre {margin:0px;}
                 div {border:0; padding:0; margin:0;}
             </style>
-            <script ><xsl:comment><![CDATA[
+        <script>
+            <xsl:comment><![CDATA[
 
 function doClick(event) {
 
@@ -159,12 +150,11 @@ function doClick(event) {
      
 }
 ]]></xsl:comment>
-      </script>
-    <xsl:text disable-output-escaping="yes">
+        </script>
+        <xsl:text disable-output-escaping="yes">
 	&lt;!-- //////// END EMBEDDED /////////// --&gt;</xsl:text>
-   </xsl:template>
-
-<!--
+    </xsl:template>
+    <!--
  /**
  * Generates tags including local/remote css and Javascript files.
  *
@@ -173,7 +163,7 @@ function doClick(event) {
  *
  * Includes local or remote files: @n
  *   - {$baseURL}include/colCode.js
- *   - {$baseURL}css/colCode.css
+ *   - {$baseURL}include/colCode.css
  *
  * @param name
  *      the template name, for direct call.
@@ -197,284 +187,288 @@ function doClick(event) {
  * @see xslt_libprintcol_template_02 for standalone HTML.
  *
  */ -->
-
-   <xsl:template name="includedHeader">
-      <xsl:param name="baseURL">relative</xsl:param>
-	  <xsl:text disable-output-escaping="yes">&lt;!-- /////////// START INCLUDE (put it in HEAD) ////////////// --&gt; </xsl:text>
-      <xsl:if test="$baseURL != 'relative'">
-          <base href="{$baseURL}" />
-      </xsl:if>
-          <!-- uses URL relatives to baseURL (using base tag)-->
-      <link href="include/colCode.css"
-                      type="text/css"
-                      rel="StyleSheet" />
-      <script src="include/colCode.js"
-                      type="text/javascript" ></script>
- 	  <xsl:text disable-output-escaping="yes">&lt;!-- /////////// END INCLUDE ////////////// --&gt; </xsl:text>
-   </xsl:template>
-
-
- <!--
+    <xsl:template name="includedHeader">
+        <xsl:param name="baseURL">relative</xsl:param>
+        <xsl:text disable-output-escaping="yes">&lt;!-- /////////// START INCLUDE (put it in HEAD) ////////////// --&gt; </xsl:text>
+        <xsl:if test="$baseURL != 'relative'">
+            <base href="{$baseURL}"/>
+        </xsl:if>
+        <!-- uses URL relatives to baseURL (using base tag)-->
+        <link href="include/colCode.css" type="text/css" rel="StyleSheet"/>
+        <script src="include/colCode.js" type="text/javascript"/>
+        <xsl:text disable-output-escaping="yes">&lt;!-- /////////// END INCLUDE ////////////// --&gt; </xsl:text>
+    </xsl:template>
+    <!--
  /**
  * Formats processing instructions.
  */  -->
-    <xsl:template match="processing-instruction()"
-                  mode="printCol">
+    <xsl:template match="processing-instruction()" mode="printCol">
         <div class="ppblock">
             <span class="ppsign">&lt;?</span>
             <span class="ppinstr">
-                <xsl:value-of select="name(.)" />
+                <xsl:value-of select="name(.)"/>
                 <xsl:text> </xsl:text>
-                <xsl:value-of select="." />
+                <xsl:value-of select="."/>
             </span>
             <span class="ppsign">?&gt;</span>
         </div>
     </xsl:template>
-
-<!--
+    <!--
  /**
  * Formats text nodes.
  */ -->
-    <xsl:template match="text()"
-                  mode="printCol">
-	 <xsl:if test="not [.='']">
-        <div class="ppblock">
-            <span class="pptext">
-                <xsl:value-of select="." />
-            </span>
-        </div>
-		</xsl:if>
+    <xsl:template match="text()" mode="printCol">
+        <xsl:if test="not [.='']">
+            <div class="ppblock">
+                <span class="pptext">
+                    <xsl:value-of select="."/>
+                </span>
+            </div>
+        </xsl:if>
     </xsl:template>
-<!--
+    <!--
  /**
  * Formats comment nodes.
  */  -->
-    <xsl:template match="comment()"
-                  mode="printCol">
+    <xsl:template match="comment()" mode="printCol">
         <div class="ppblock">
-           <xsl:if test="$status='close'">
-            <span>
-             <span class="ppclick"
-                  onclick="doClick(event)">+</span>
-             <span class="ppsign">&lt;!--</span>
-            </span>
-            <div class="ppcomml" style="display:none" >
-                <pre><xsl:value-of select="." /></pre>
-                <span class="ppsign">--&gt;</span>
-             </div>
-          </xsl:if>
-          <xsl:if test="$status='open'">
-           <span>
-             <span class="ppclick"
-                  onclick="doClick(event)">-</span>
-             <span class="ppsign">&lt;!--</span>
-           </span>
-           <div class="ppcomml">
-                <pre><xsl:value-of select="." /></pre>
-                <span class="ppsign">--&gt;</span>
-             </div>
+            <xsl:if test="$STATUS='close'">
+                <span>
+                    <span class="ppclick" onclick="doClick(event)">+</span>
+                    <span class="ppsign">&lt;!--</span>
+                </span>
+                <div class="ppcomml" style="display:none">
+                    <pre>
+                        <xsl:value-of select="."/>
+                    </pre>
+                    <span class="ppsign">--&gt;</span>
+                </div>
             </xsl:if>
-          
+            <xsl:if test="$STATUS='open'">
+                <span>
+                    <span class="ppclick" onclick="doClick(event)">-</span>
+                    <span class="ppsign">&lt;!--</span>
+                </span>
+                <div class="ppcomml">
+                    <pre>
+                        <xsl:value-of select="."/>
+                    </pre>
+                    <span class="ppsign">--&gt;</span>
+                </div>
+            </xsl:if>
         </div>
     </xsl:template>
-<!--
+    <!--
  /**
  * Formats attributes.
  * Special cases: 
   * - documentation:  Added 'pre' 
   * - name: class is ppname.
  */  -->
-    <xsl:template match="@*"
-                  mode="printCol">
+    <xsl:template match="@*" mode="printCol">
         <span class="ppattname">
-            <xsl:value-of select="name(.)" />
+            <xsl:value-of select="name(.)"/>
         </span>
         <span class="ppsign">="</span>
-		   <xsl:choose>
-              <xsl:when test="'description'= name(.)">
-			       <span class="ppdesc"> <pre><xsl:value-of select="." /></pre></span>
-              </xsl:when>
-              <xsl:when test="'name'= name(.)">
-			       <span class="ppname"><xsl:value-of select="." /></span>
-              </xsl:when>
-              <xsl:otherwise>
-  			       <span class="ppattval"><xsl:value-of select="." /></span>
-              </xsl:otherwise>
-          </xsl:choose>
+        <xsl:choose>
+            <xsl:when test="'description'= name(.)">
+                <span class="ppdesc">
+                    <pre>
+                        <xsl:value-of select="."/>
+                    </pre>
+                </span>
+            </xsl:when>
+            <xsl:when test="'name'= name(.)">
+                <span class="ppname">
+                    <xsl:value-of select="."/>
+                </span>
+            </xsl:when>
+            <xsl:otherwise>
+                <span class="ppattval">
+                    <xsl:value-of select="."/>
+                </span>
+            </xsl:otherwise>
+        </xsl:choose>
         <span class="ppsign">"</span>
         <xsl:if test="position()!=last()">
             <xsl:text> </xsl:text>
         </xsl:if>
     </xsl:template>
-     <!-- match empty elements -->
- <!--
+    <!-- match empty elements -->
+    <!--
  /**
  * Formats empty nodes.
  *
  */ -->
-    <xsl:template match="*[not(node())]"
-                  mode="printCol">
+    <xsl:template match="*[not(node())]" mode="printCol">
         <div class="ppblock">
             <span class="ppsign">&lt;</span>
             <span class="ppitem">
-                <xsl:value-of select="name(.)" />
+                <xsl:value-of select="name(.)"/>
             </span>
             <xsl:if test="@*">
                 <xsl:text> </xsl:text>
             </xsl:if>
-            <xsl:apply-templates select="@*"
-                                 mode="printCol" />
-            <xsl:apply-templates select="."
-                                 mode="namespace" />
+            <xsl:apply-templates select="@*" mode="printCol"/>
+            <xsl:apply-templates select="." mode="namespace"/>
             <span class="ppsign">/&gt;</span>
         </div>
     </xsl:template>
-     <!-- match elements with only text(), they are not closeable -->
-  <!--
+    <!-- match elements with only text(), they are not closeable -->
+    <!--
 /**
  * Formats elements with only text(), they are not closeable.
  * Special cases: 
  * - documentation:  Added 'pre' 
  * - name: class is ppname.
  */  -->
-    <xsl:template match="*[text() and not(./*)]"
-                  mode="printCol">
-  	   <xsl:if test="name(.)='SyContainer'">
-	            <xsl:text disable-output-escaping="yes">&lt;!-- ++++ START </xsl:text><xsl:value-of select="@name" /> <xsl:text disable-output-escaping="yes"> +++++++++++ --&gt;</xsl:text>
-                </xsl:if>
- 	   <xsl:if test="(name(.)='SyFolder') or (name(.)='SyProgramCmd')or (name(.)='SySeparator')or (name(.)='SyLink')or (name(.)='SyDocument')or (name(.)='SySeparator') or (name(.)='SyLabel')">
-	            <xsl:text disable-output-escaping="yes">&lt;!-- .... start </xsl:text><xsl:value-of select="name(.)" /> <xsl:text disable-output-escaping="yes"> ............ --&gt;</xsl:text>
-                </xsl:if>
-      <div class="ppblock">
+    <xsl:template match="*[text() and not(./*)]" mode="printCol">
+        <xsl:if test="name(.)='SyContainer'">
+            <xsl:comment>
+                <xsl:value-of select="concat(' ++++ START ',@name, '+++++++++++' )"/>
+            </xsl:comment>
+        </xsl:if>
+        <xsl:if test="(name(.)='SyFolder') or (name(.)='SyProgramCmd')or (name(.)='SySeparator')or (name(.)='SyLink')or (name(.)='SyDocument')or (name(.)='SySeparator') or (name(.)='SyLabel')">
+            <xsl:comment>
+                <xsl:value-of select="concat(' .... Item ',name(.),' (',name,') .......... ' )"/>
+            </xsl:comment>
+        </xsl:if>
+        <div class="ppblock">
             <span class="ppsign">&lt;</span>
             <span class="ppitem">
-                 <xsl:value-of select="name(.)" />
+                <xsl:value-of select="name(.)"/>
             </span>
             <xsl:if test="@*">
                 <xsl:text> </xsl:text>
             </xsl:if>
-            <xsl:apply-templates select="@*"
-                                 mode="printCol" />
-            <xsl:apply-templates select="."
-                                 mode="namespace" />
+            <xsl:apply-templates select="@*" mode="printCol"/>
+            <xsl:apply-templates select="." mode="namespace"/>
             <span class="ppsign">
                 <xsl:text>&gt;</xsl:text>
             </span>
-			
-		    <xsl:choose>
-				  <xsl:when test="'description'=name(.)">
-					   <span class="ppdesc"><pre><xsl:value-of select="." /></pre></span>
-				  </xsl:when>
-				  <xsl:when test="'name'= name(.)">
-					   <span class="ppname"><xsl:value-of select="." /></span>
-				  </xsl:when>
-				  <xsl:otherwise>
-					   <span class="pptext"><xsl:value-of select="." /></span>
-				  </xsl:otherwise>
-			</xsl:choose>
+            <xsl:choose>
+                <xsl:when test="'description'=name(.)">
+                    <span class="ppdesc">
+                        <pre>
+                            <xsl:value-of select="."/>
+                        </pre>
+                    </span>
+                </xsl:when>
+                <xsl:when test="'name'= name(.)">
+                    <span class="ppname">
+                        <xsl:value-of select="."/>
+                    </span>
+                </xsl:when>
+                <xsl:otherwise>
+                    <span class="pptext">
+                        <xsl:value-of select="."/>
+                    </span>
+                </xsl:otherwise>
+            </xsl:choose>
             <span class="ppsign">&lt;/</span>
             <span class="ppitem">
-                <xsl:value-of select="name(.)" />
+                <xsl:value-of select="name(.)"/>
             </span>
             <span class="ppsign">
                 <xsl:text>&gt;</xsl:text>
             </span>
         </div>
-  	   <xsl:if test="name(.)='SyContainer'">
-                <xsl:text disable-output-escaping="yes">&lt;!-- ==== END </xsl:text><xsl:value-of select="@name" /> <xsl:text disable-output-escaping="yes"> =========== --&gt;</xsl:text>
-                </xsl:if>
-   </xsl:template>
- <!--
+        <xsl:if test="name(.)='SyContainer'">
+            <xsl:comment>
+                <xsl:value-of select="concat(' ====  END BRANCH ',@name, ' =========== ' )"/>
+            </xsl:comment>
+        </xsl:if>
+    </xsl:template>
+    <!--
  /**
  * Formats not empty nodes.
  *
  */  -->
-    <xsl:template match="*[*]"
-                  mode="printCol">
-	   <xsl:if test="name(.)='SyContainer'">
-	            <xsl:text disable-output-escaping="yes">&lt;!-- ++++ START </xsl:text><xsl:value-of select="@name" /> <xsl:text disable-output-escaping="yes"> +++++++++++ --&gt;</xsl:text>
+    <xsl:template match="*[*]" mode="printCol">
+        <xsl:if test="name(.)='SyContainer'">
+            <xsl:comment>
+                <xsl:value-of select="concat(' ++++ START BRANCH ',@name, '+++++++++++' )"/>
+            </xsl:comment>
+            <!--
+	            <xsl:text disable-output-escaping="yes">&#xA;&lt;!- - ++++ START </xsl:text><xsl:value-of select="@name" /> <xsl:text disable-output-escaping="yes"> +++++++++++ - -&gt;&#xA;</xsl:text> 
+                -->
+        </xsl:if>
+        <xsl:if test="(name(.)='SyFolder') or (name(.)='SyProgramCmd') or (name(.)='SySeparator')or (name(.)='SyLink')or (name(.)='SyDocument')or (name(.)='SySeparator') or (name(.)='SyLabel')">
+            <xsl:comment>
+                <xsl:value-of select="concat(' ....  Item ',name(.),' (',name,') .......... ' )"/>
+            </xsl:comment>
+        </xsl:if>
+        <div class="ppblock">
+            <div>
+                <xsl:if test="$STATUS='close'">
+                    <span class="ppclick" onclick="doClick(event)">+</span>
                 </xsl:if>
-	   <xsl:if test="(name(.)='SyFolder') or (name(.)='SyProgramCmd') or (name(.)='SySeparator')or (name(.)='SyLink')or (name(.)='SyDocument')or (name(.)='SySeparator') or (name(.)='SyLabel')">
-		        <xsl:text disable-output-escaping="yes">&lt;!-- .... start </xsl:text><xsl:value-of select="name(.)" /> <xsl:text disable-output-escaping="yes"> ........... --&gt;</xsl:text>
-             </xsl:if>
-       <div class="ppblock">
-           <div>
-                <xsl:if test="$status='close'">
-                   <span class="ppclick"
-                      onclick="doClick(event)">+</span>
-                </xsl:if>
-                <xsl:if test="$status='open'">
-                   <span class="ppclick"
-                      onclick="doClick(event)">-</span>
+                <xsl:if test="$STATUS='open'">
+                    <span class="ppclick" onclick="doClick(event)">-</span>
                 </xsl:if>
                 <span class="ppsign">&lt;</span>
                 <span class="ppitem">
-                     <xsl:value-of select="name(.)" />
+                    <xsl:value-of select="name(.)"/>
                 </span>
                 <xsl:if test="@*">
                     <xsl:text> </xsl:text>
                 </xsl:if>
-                <xsl:apply-templates select="@*"
-                                     mode="printCol" />
-                <xsl:apply-templates select="."
-                                     mode="namespace" />
+                <xsl:apply-templates select="@*" mode="printCol"/>
+                <xsl:apply-templates select="." mode="namespace"/>
                 <span class="ppsign">
                     <xsl:text>&gt;</xsl:text>
                 </span>
             </div>
-            <xsl:if test="$status='open'">
-              <div style="display:block">
-              <!-- children nodes processing -->
-                  <xsl:apply-templates mode="printCol" />
-                  <div>
-                      <span class="ppsign">&lt;/</span>
-                      <span class="ppitem">
-                          <xsl:value-of select="name(.)" />
-                      </span>
-                      <span class="ppsign">
-                          <xsl:text>&gt;</xsl:text>
-                      </span>
-                  </div>
-              </div>
+            <xsl:if test="$STATUS='open'">
+                <div style="display:block">
+                    <!-- children nodes processing -->
+                    <xsl:apply-templates mode="printCol"/>
+                    <div>
+                        <span class="ppsign">&lt;/</span>
+                        <span class="ppitem">
+                            <xsl:value-of select="name(.)"/>
+                        </span>
+                        <span class="ppsign">
+                            <xsl:text>&gt;</xsl:text>
+                        </span>
+                    </div>
+                </div>
             </xsl:if>
-           <xsl:if test="$status='close'">
-              <div style="display:none">
-              <!-- children nodes processing -->
-                  <xsl:apply-templates mode="printCol" />
-                  <div>
-                      <span class="ppsign">&lt;/</span>
-                      <span class="ppitem">
-                          <xsl:value-of select="name(.)" />
-                      </span>
-                      <span class="ppsign">
-                          <xsl:text>&gt;</xsl:text>
-                      </span>
-                  </div>
-              </div>
+            <xsl:if test="$STATUS='close'">
+                <div style="display:none">
+                    <!-- children nodes processing -->
+                    <xsl:apply-templates mode="printCol"/>
+                    <div>
+                        <span class="ppsign">&lt;/</span>
+                        <span class="ppitem">
+                            <xsl:value-of select="name(.)"/>
+                        </span>
+                        <span class="ppsign">
+                            <xsl:text>&gt;</xsl:text>
+                        </span>
+                    </div>
+                </div>
             </xsl:if>
- 
         </div>
- 	   <xsl:if test="name(.)='SyContainer'">
-                <xsl:text disable-output-escaping="yes">&lt;!-- ==== END </xsl:text><xsl:value-of select="@name" /> <xsl:text disable-output-escaping="yes"> =========== --&gt;</xsl:text>
-                </xsl:if>
-  </xsl:template>
-   <!--
+        <xsl:if test="name(.)='SyContainer'">
+            <xsl:comment>
+                <xsl:value-of select="concat(' ====  END BRANCH ',@name, ' =========== ' )"/>
+            </xsl:comment>
+        </xsl:if>
+    </xsl:template>
+    <!--
  /**
  * Formats namespaces.
  *
  */  -->
-    <xsl:template match="*"
-                  mode="namespace">
-        <xsl:variable name="context"
-                      select="." />
+    <xsl:template match="*" mode="namespace">
+        <xsl:variable name="context" select="."/>
         <xsl:for-each select="namespace::node()">
-            <xsl:variable name="nsuri"
-                          select="." />
-            <xsl:variable name="nsprefix"
-                          select="name()" />
+            <xsl:variable name="nsuri" select="."/>
+            <xsl:variable name="nsprefix" select="name()"/>
             <xsl:choose>
                 <xsl:when test="$nsprefix = 'xml'">
-                     <!-- skip: xml namespace -->
+                    <!-- skip: xml namespace -->
                 </xsl:when>
                 <xsl:when test="$context/../namespace::node()[name() = $nsprefix and . = $nsuri]">
                     <!-- skip: namespace already declared on the parent -->
@@ -485,28 +479,25 @@ function doClick(event) {
                         <xsl:text>xmlns</xsl:text>
                         <xsl:if test="$nsprefix">
                             <xsl:text>:</xsl:text>
-                            <xsl:value-of select="$nsprefix" />
+                            <xsl:value-of select="$nsprefix"/>
                         </xsl:if>
                     </span>
                     <span class="ppsign">="</span>
                     <span class="ppattval">
-                        <xsl:value-of select="." />
+                        <xsl:value-of select="."/>
                     </span>
                     <span class="ppsign">"</span>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:for-each>
     </xsl:template>
-
- <!--
+    <!--
  /**
  * This catchs errors.
  * for debug only.
  */  -->
-   <xsl:template match="*"
-                  mode="printCol">
-          <xsl:comment> using ERROR template for <xsl:value-of select="name(.)" />=<xsl:value-of select="." /></xsl:comment>
-
-   </xsl:template>
-
- </xsl:stylesheet>
+    <xsl:template match="*" mode="printCol">
+        <xsl:comment> using catch-all template for <xsl:value-of select="name(.)"/>=<xsl:value-of select="."/>
+        </xsl:comment>
+    </xsl:template>
+</xsl:stylesheet>
