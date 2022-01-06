@@ -1,10 +1,10 @@
 [**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub") is a tool that export and import the SyMenu structure to/from *markdown* files. This allows for easily management of large menus. By editing an *MD* file you can update and reorganize the menu tree, change names and edit tooltips for all items. 
 
-The origin of this solution bemes from away. I like *SyMenu* for the *tooltips*: between the *'Start Menu'* replacements this is an unique feature. Why I like tooltips? Because I use many programs, but not in regular basis, so the tooltips are an useful help to remeber info about programs and features, documentations and workflows.
+The origin of this solution bemes from afar. I like *SyMenu* for the *tooltips*: between the *'Start Menu'* replacements this is a unique feature. Why do I like tooltips? Because I use many programs, but not in a regular basis, the tooltips are an useful aid in remebering information about programs and features, documentation, and workflows.
 
-How to edit SyMenu Configuration? SyMenu offers a tree for managing the menu structure and 'ad hoc' forms for configuring items. Faster, a file can be drag&drop onto the SyMenu Icon and a new item is added to menu. You can also do a 'Batch Import' whitch scans a folder and adds all executables files. Enough? Yes... and not. I have also the esigence of a way more global, not so detailed and punctual as the forms, but not so simple and skeletal as the SyMenu Tree view. 
+How to edit the SyMenu Configuration? SyMenu offers a tree for managing the menu structure and 'ad hoc' forms for configuring items. Faster, a file can be 'drag&drop' onto the SyMenu Icon and a new item is added to menu. You can also do a 'Batch Import' which scans a folder and adds all executables files. Quite? Yes... and not. I also need a more global way, not so detailed and punctual as the forms, but not so simple and skeletal as the SyMenu Tree view. 
 
-L'option to edit directly the SyMenuItem in XML, maybe with a specializzated editor is too verbose and full of details: not viable. The XML is useful for documentation pourposes: see prettyPrintMenu.
+L'option to directly edit the SyMenuItem in XML, perhaps with a specializzated editor is too verbose and full of details: not praticable. XML is useful for documentation pourposes: see prettyPrintMenu.
 
 The basic idea here is to use the Markdown, very less verbose than XML, to define only some important (for me) aspects of SyMenu: the buildig of large trees, the tuning of tootips, in general the visible parts of the menu, in a fast and economical way. (e.g. to define a new menu structure of 60-100 branchs, or rewrite some SPS descriptions, ofthen too big to fit in a tooltip).
 
