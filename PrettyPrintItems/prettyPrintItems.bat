@@ -15,7 +15,7 @@ SET INLINE_HEADER=true
 :: You can remove "rem" from following two lines, if you'd like to use a specific java jre or jdk (example):
 rem set JAVA_HOME=C:/j2sdk1.4.2_10
 rem set PATH=%JAVA_HOME%/bin
-:: You can remove "rem" from following line, to change the default 'TMP' path used (example):
+:: You can remove "rem" from following line, to change the default 'TMP' path used (example) :
 rem set TMP=%USERPROFILE%\Desktop
 :: ************************************* (edit ends)
 
