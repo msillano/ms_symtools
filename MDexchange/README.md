@@ -6,7 +6,7 @@ How to edit the SyMenu Configuration? SyMenu offers a tree for managing the menu
 
 L'option to directly edit the SyMenuItem in XML, perhaps with a specializzated editor is too verbose and full of details: not praticable. XML is useful for documentation pourposes: see prettyPrintMenu.
 
-The basic idea here is to use the Markdown, much less verbose than XML, to define just few important (to me) aspects of SyMenu: building large trees, fine-tuning tootips, in generally speaking visible parts of the menu, in a fast, easy and avantageous way. (e.g. to define a new menu structure of 60-100 branchs, or rewrite some SPS descriptions, ofthen too big to fit into a tooltip).
+The basic idea here is to use the Markdown, much less verbose than XML, to define just a few important (to me) aspects of SyMenu: building large trees, fine-tuning tootips, in generally speaking visible parts of the menu, in a fast, easy and avantageous way. (e.g. to define a new menu structure of 60-100 branchs, or rewrite some SPS descriptions, ofthen too big to fit into a tooltip).
 
 In any case this is a new option for advanced users: now you can also use this way to edit and maintain SyMenu structures, one more alternative. Use it if and when you find useful and beneficial.
 
