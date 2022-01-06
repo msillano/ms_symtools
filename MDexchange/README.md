@@ -21,17 +21,17 @@ This structure was created using the SyMenu features.
 The alternative I propose is based on 3 steps:
 
 ### Export to MD ##
-The `SyMenu2MDexport` tool transforms the SyMenu info in a *Markdown file*, easy manageable by MarkdownPad2.
+The `SyMenu2MDexport` tool transforms the SyMenu configuration structure in a *Markdown file*, easy manageable by MarkdownPad2.
 
 ![Markdown edit](https://github.com/msillano/ms_symtools/blob/main/img/fig011.jpg?raw=true)
 
 The MD format was chosen to achieve 2 goals:
 
 - Easy to modify by the user
-- Produce a HTML good visual feedback, further customizable using CSS.
+- It produces a good HTML visual feedback, further customizable using CSS.
 
 ### Edit MD
-Now the user can reorganize the menu tree, with a cut&paste in MD. Can add Containers, Separators and Labels and update the Items name or description.
+Now the user can rearrange the menu tree, with a cut&paste in MD. It can add Containers, Separators and Labels and update the name or description of the Items.
 
 If descriptions are used as tooltip content, as I do with my menus, it helps to keep then not too big. Since the description is seachable from SyMenu, you need to choose the included keywords carefully.
 
@@ -40,13 +40,13 @@ The details of MD editing rules are in the file `MD-for-SyMenu.md.`
 ### Import MD to SyMenu
 Once the edit phase is complete, the user must save the updated file. In MarkdownPad2: *file|Export|Export HTML*.
 
-The `MD2SyMenuImport` tool keeps the file HTML exported by *MarkdownPad2* and merge it back into the existing `SyMenuItem.zip` file, updating all changed menu items,  in one step.
+The `MD2SyMenuImport` tool keeps the HTML file exported by *MarkdownPad2* and merges it back into the existing `SyMenuItem.zip` file, updating all changed menu items,  in one step.
 
-One feature is that you can update the full menu or just a branch. Delete all lines before and after the area of interest, to obtain the required branch as root node: the 'import' will replace the old menu branch with the new version. 
+One feature is that you can update the full menu or just a branch. Delete all lines before and after the area of interest, to get the required branch as the root node: the 'import' will replace the old menu branch with the new version. 
 
-Or you can esport only items, into a flat list. After edit, the 'import' replaces all updated items in the rigth place of the tree.
+Or you can export just items, in a flat list. After modification, the 'import' replaces all updated items in the correct location in the tree.
 
-*Perhaps the best use of this tool is the creation of big classification tree, in the case of reorganizations of your SyMenu. (e.g. creation of a SyMenu specialozed in Multimedia). In case of large menus it is mandatory to have a robust tree hierarchy, which then can be updated gradually, even before reaching Drakkn's [more than 3'000+ Items](https://www.ugmfree.it/Forum/messages.aspx?TopicID=817)* :).
+*Perhaps the best use of this tool is the creation of large classification tree, in the case of reorganizations of your SyMenu. (e.g. creation of a SyMenu specialozed in Multimedia). In case of large menus it is mandatory to have a robust tree hierarchy, which then can be updated gradually, even before reaching the [more than 3'000+](https://www.ugmfree.it/Forum/messages.aspx?TopicID=817) Drakkn Items :).*
 
 Done.
 
