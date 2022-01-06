@@ -20,7 +20,7 @@ This structure was created using the SyMenu features.
 
 The alternative I propose is based on 3 steps:
 
-### Export to MD ##
+### Export SyMenu to MD ##
 The `SyMenu2MDexport` tool transforms the SyMenu configuration structure in a *Markdown file*, easy manageable by MarkdownPad2.
 
 ![Markdown edit](https://github.com/msillano/ms_symtools/blob/main/img/fig011.jpg?raw=true)
