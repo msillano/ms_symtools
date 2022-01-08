@@ -35,16 +35,20 @@ Now the user can rearrange the menu tree, with a cut&paste in MD. It can add Con
 
 If descriptions are used as tooltip content, as I do with my menus, it helps to keep then not too big. Since the description is seachable from SyMenu, you need to choose the included keywords carefully.
 
+Editing, you can also add your comments, without interference with the SyMenu strucuture.
+
 The details of MD editing rules are in the file `MD-for-SyMenu.md.` 
 
 ### Import MD to SyMenu
 Once the edit phase is complete, the user must save the updated file. In MarkdownPad2: *file|Export|Export HTML*.
 
-The `MD2SyMenuImport` tool keeps the HTML file exported by *MarkdownPad2* and merges it back into the existing `SyMenuItem.zip` file, updating all changed menu items,  in one step.
+The `MD2SyMenuImport` tool keeps the HTML file exported by *MarkdownPad2* and merges it back into the existing `SyMenuItem.zip` file, updating all changed menu items, in one step.
 
-One feature is that you can update the full menu or just a branch. Delete all lines before and after the area of interest, to get the required branch as the root node: the 'import' will replace the old menu branch with the new version. 
+One feature is that you can *update the full menu* or *just a branch*. Delete all lines before and after the area of interest, to get the required branch as the root node: the 'import' will replace the old menu branch with the new version. 
 
-Or you can export just items, in a flat list. After modification, the 'import' replaces all updated items in the correct location in the tree.
+Or you can *export just items*, in a flat list. After modification, the 'import' replaces all updated items in the correct location in the tree.
+
+You can also export *only the tree*, without Items. This mode allows the 'sharing' of SyMenu tree between users. Importing an 'empty' tree places all existing Items in one 'orphans' container: using 'drag&drop', on SyMenu Configuration tree, it is easy to re-populate the new tree. 
 
 *Perhaps the best use of this tool is the creation of large classification tree, in the case of reorganizations of your SyMenu. (e.g. creation of a SyMenu specialozed in Multimedia). In case of large menus it is mandatory to have a robust tree hierarchy, which then can be updated gradually, even before reaching the [more than 3'000+](https://www.ugmfree.it/Forum/messages.aspx?TopicID=817) Drakkn Items :).*
 
