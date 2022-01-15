@@ -1,14 +1,14 @@
-[**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub") is a tool that export and import the SyMenu structure to/from *markdown* files. This allows for easily management of large menus. By editing comfortably an *MD* file, in a featured editor,  you can update and reorganize the menu tree, change names and edit tooltips for all items. 
+[**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub") is a tool that export and import the SyMenu structure to/from *markdown* files. This allows for menu sharing and easily management of large menus. By comfortably editing an *MD* file, in a featured editor,  you can update and reorganize the menu tree, change names and edit tooltips for all items. 
 
-The origin of this solution bemes from afar. I like *SyMenu* for the *tooltips*: between the *'Start Menu'* replacements this is a unique feature. Why do I like tooltips? Because I use many programs, but not in a regular basis, the tooltips are an useful aid in remebering information about programs and features, documentation, and workflows.
+The origin of this solution bemes from afar. I like *SyMenu* for the *tooltips*: between the *'Start Menu'* replacements this is a unique feature. Why do I like tooltips? Because I use many programs, but not in a regular basis, the tooltips are an useful aid in remebering information about programs and features, documentation, workflows.
 
 How to edit the SyMenu Configuration? SyMenu offers a tree for managing the menu structure and 'ad hoc' forms for configuring items. Faster, a file can be 'drag&drop' onto the SyMenu Icon and a new item is added to menu. You can also do a 'Batch Import' which scans a folder and adds all executables files. Quite? Yes... and not. I also need a more global way, not so detailed and punctual as the forms, but not so simple and skeletal as the SyMenu Tree view. 
 
-L'option to directly edit the SyMenuItem in XML, perhaps with a specializzated editor, is too verbose and full of details: not praticable in my option. XML is useful for documentation pourposes: see prettyPrintMenu.
+The option to directly edit the SyMenuItem in XML, perhaps with a specializzated editor, is too verbose and full of details: not praticable in my option. XML is useful for documentation pourposes: see prettyPrintMenu.
 
-The basic idea here is to use the Markdown, much less verbose than XML, to define just a few important (to me) aspects of SyMenu: building large trees, fine-tuning tootips, in generally speaking visible parts of the menu, in a fast, easy and avantageous way. (e.g. to define a new menu structure of 60-100 branchs, or rewrite some SPS descriptions, ofthen too big to fit into a tooltip).
+The basic idea here is to use the Markdown, much less verbose than XML, to define just a few but important (to me) aspects of SyMenu: building large trees, fine-tuning tootips, in generally speaking visible parts of the menu, in a fast, easy and avantageous way. (e.g. to define a new menu structure of 60-100 branchs, or rewrite some SPS descriptions, ofthen too big to fit into a tooltip).
 
-In any case this is a new option for advanced users: now you can also use this way to edit and maintain SyMenu structures, one more alternative. Use it if and when you find useful and beneficial.
+In any case this is a new option for advanced users: now you can share menu, and can also use this way to edit and maintain your SyMenu structures. One more alternative, use it if and when you find useful and beneficial.
 
 A simple example, using the branch ['This PC[DESKTOP-LFGU1S1]'](https://www.ugmfree.it/Forum/messages.aspx?TopicID=830) can help: 
 
@@ -37,18 +37,18 @@ If descriptions are used as tooltip content, as I do with my menus, it helps to 
 
 Editing, you can also add your comments, without interference with the SyMenu strucuture.
 
-The details of MD editing rules are in the file `MD-for-SyMenu.md.` 
+The details of MD editing rules are in the file `share\MD-for-SyMenu.pdf.` 
 
 ### Import MD to SyMenu
-Once the edit phase is complete, the user must save the updated file. In MarkdownPad2: *file|Export|Export HTML*.
+Once the edit phase is complete, the user must export the updated file. In MarkdownPad2: *file|Export|Export HTML*.
 
-The `MD2SyMenuImport` tool keeps the HTML file exported by *MarkdownPad2* and smart merges it back into the existing `SyMenuItem.zip` file, updating all changed menu items, in one step.
+The `MD2SyMenuImport` tool keeps the HTML file saved by *MarkdownPad2* and smart merges it back into the existing `SyMenuItem.zip` file, updating all changed menu items, in one step.
 
 One feature is that you can *update the full menu* or *just a branch*. Delete all lines before and after the area of interest, to get the required branch as the root node: the 'import' will replace the old menu branch with the new version. 
 
 Or you can *export just items*, in a flat list. After modification, the 'import' replaces all updated items in the correct location in the tree.
 
-You can also export *only the tree*, without Items. This mode allows the 'sharing' of SyMenu tree between users. Importing an 'empty' tree places all existing Items in one 'orphans' container: using 'drag&drop', on SyMenu Configuration tree, it is easy to re-populate the new tree. 
+You can also export *only the tree*, without Items. This mode allows the 'sharing' of SyMenu tree between users, because the tree is portable. Importing an 'empty' tree places all existing Items in one 'orphans' container: using 'drag&drop', on SyMenu Configuration tree, it is easy to re-populate the new tree. 
 
 *Perhaps the best use of this tool is the creation of large classification tree, in the case of reorganizations of your SyMenu. (e.g. creation of a SyMenu specialozed in Multimedia). In case of large menus it is mandatory to have a robust tree hierarchy, which then can be updated gradually, even before reaching the [more than 3'000+](https://www.ugmfree.it/Forum/messages.aspx?TopicID=817) Drakkn Items :).*
 
