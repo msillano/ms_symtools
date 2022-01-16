@@ -8,6 +8,8 @@ The **prettyPrint SyMenu** output document is useful documentation per itself,  
 
 For more info you can download the **prettyPrimt SyMenu** help (file *prettyPrintItems.chm*).
 
+**Download**
+You can download the zip file with the latest version at the [ms_symtools main page](https://github.com/msillano/ms_symtools)
 
 **Versions:**
 2.2 beta
