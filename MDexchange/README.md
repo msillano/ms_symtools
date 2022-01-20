@@ -1,4 +1,5 @@
-[**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub") is a tool that export and import the SyMenu structure to/from *markdown* files. This allows for menu sharing and easily management of large menus. By comfortably editing an *MD* file, in a featured editor,  you can update and reorganize the menu tree, change names and edit tooltips for all items. 
+[**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub")  allows you to document and 'share' partial or full SyMenu trees with other users. 
+The Markdown format enables for easily management of large menus: by editing comfortably an MD file, in a featured editor, you can update and reorganize the menu tree, change names and edit tooltips for all items.
 
 The origin of this solution bemes from afar. I like *SyMenu* for the *tooltips*: between the *'Start Menu'* replacements this is a unique feature. Why do I like tooltips? Because I use many programs, but not in a regular basis, the tooltips are an useful aid in remebering information about programs and features, documentation, workflows.
 
@@ -6,29 +7,28 @@ How to edit the SyMenu Configuration? SyMenu offers a tree for managing the menu
 
 The option to directly edit the SyMenuItem in XML, perhaps with a specializzated editor, is too verbose and full of details: not praticable in my option. XML is useful for documentation pourposes: see prettyPrintMenu.
 
-The basic idea here is to use the Markdown, much less verbose than XML, to define just a few but important (to me) aspects of SyMenu: building large trees, fine-tuning tootips, in generally speaking visible parts of the menu, in a fast, easy and avantageous way. (e.g. to define a new menu structure of 60-100 branchs, or rewrite some SPS descriptions, ofthen too big to fit into a tooltip).
+Using Markdown, you can import, export and edit menus for SyMenu: this is a new option for advanced users, you can use it use it if and when you find useful and beneficial.
 
-In any case this is a new option for advanced users: now you can share menu, and can also use this way to edit and maintain your SyMenu structures. One more alternative, use it if and when you find useful and beneficial.
-
-A simple example, using the branch ['This PC[DESKTOP-LFGU1S1]'](https://www.ugmfree.it/Forum/messages.aspx?TopicID=830) can help: 
+The branch ['This PC[DESKTOP-LFGU1S1]'](https://www.ugmfree.it/Forum/messages.aspx?TopicID=830) look so in SyMenu:
 
 ![Menu branch](https://github.com/msillano/ms_symtools/blob/main/img/fig101.jpg?raw=true)
    
-This structure was created using the SyMenu features.
+This structure was created using the SyMenu forms:
 
 ![SyMenu form](https://github.com/msillano/ms_symtools/blob/main/img/fig010.jpg?raw=true)
 
-The alternative I propose is based on 3 steps:
+The **MDexport offerts** menu processing in three steps:
 
-### Export SyMenu to MD ##
+### Export SyMenu to MD ###
 The `SyMenu2MDexport` tool transforms the SyMenu configuration structure in a *Markdown file*, easy manageable by MarkdownPad2 and other editors.
 
 ![Markdown edit](https://github.com/msillano/ms_symtools/blob/main/img/fig011.jpg?raw=true)
 
-The MD format was chosen to achieve 2 goals:
+The MD format was chosen to achieve the goals:
 
 - Easy to modify by the user
 - It produces a good HTML visual feedback, further customizable using CSS.
+- It allows 2 kinds of comments: visible  and rich in HTML, and invisible: only in MD.
 
 ### Edit MD
 Now the user can rearrange the menu tree, with a cut&paste in MD. It can add Containers, Separators and Labels and update the name or description of the Items.
@@ -59,3 +59,12 @@ Done.
 - *Using **MDexchange** is safe, as it makes a backup before any changes to SyMenuItem.zip. The simple **SyMenuUndo.bat** tool can restore SyMenuItem.zip from the last backup.*
 - *Using **MDexchange** is safe, because it never delete one Item: all Items from the original menu, but not present in the updated output are grouped in an ad hoc container named 'orphans'.
 - *Using **MarkdownPad2** is mandatory: I have tested many MD editors, and the MD->HTML  transformation is handled in different ways by different programs. As an extra, MarkdownPad2 offers visible feedback with easy CSS handling, even in the free version, useful for changing the look of HTML output. If you like, you can use a more featured editor to edit the MD file (e.g. MarkdownPad2 has no "find and replace" function) but it is mandatory to load  the edited file in MarkdownPad2 for export to (X)HTML.*
+
+### Share menus
+
+A menu Exported in 'TREE' mode does no contains any local references. Then you can 'share' the MD file because it is portable, and you can also insert 'howto' informations. 
+- Any user can 'Import' it into their SyMenu, as template for a reorganization of the menu. All the items (SyProgramCmd, SyFolder, etc.) are grouped, in the original order, in an 'Orphans' SyContainer placed at the end of the menu: no program is lost!.
+
+- The user can export now the new menu to MD, and edit the MD file: move programs to right place and update descriptions. Once finished he has to import the file back into SyMenu.
+
+*Actually Items can be shared too, but Items require some extra editing in SyMenu, to add the local path (if it exist in target PC!). New menu entries are marked as 'FAKE' by MD2SyMenuImport as a reminder. See MDrules.md, it contains Items.*
