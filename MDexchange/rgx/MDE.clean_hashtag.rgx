@@ -1,0 +1,51 @@
+#/** @file
+# Regex rules for delete existing hashtags in XML (export, import).
+# Used only if HASHTAG=NONE|AUTO
+#  - Destroys existing #hashtags.
+
+# @note
+#  - In attributes, CRLF are HTML escaped (&amp;#xD;&amp;#xA;)
+#  - Rule numbers must start from 1 and must be progressive. <br />
+#  - This file must be used with <TT>regexfilter</tt> (b mode) in shell or using a custom driver.
+#*/
+
+#/** @file
+# * @version 15/12/21 for MDEchange.
+# * @author &copy;2021 Marco Sillano.
+# */ 
+
+/**
+*Pseudo-function with actual rules.
+*/
+
+## rule 1: delete hashtag: '^#tag' becomes '' in description (node)
+regex1=(?m)^\\s*#[^<]*</description
+replacement1=</description
+
+## rule 2: delete hashtag limit case: 'description>#tag</description' (node)
+regex2=(?m)ption>\\s*#[^<]*</description
+replacement2=ption></description
+
+## rule 3:  eliminates final empty lines in description (node)
+regex3=\\r?\\n</description
+replacement3=</description
+
+## rule 4:  eliminates final empty lines in description (attribute)
+regex4=&#xD;&#xA;"
+replacement4="
+
+## rule 5:  delete hashtag: 'CRLF#tag"' becomes '"' in description (attribute)
+regex5=(?m)&#xD;&#xA;\\s*#[^"]*"
+replacement5="
+
+## rule 6:  delete hashtag: 'LF#tag"' becomes '"' (after rule 5) in description (attribute)
+regex6=(?m)&#xA;\\s*#[^"]*"
+replacement6="
+
+## rule 7:  delete hashtag  limit case: ="#tag"  (attribute)
+regex7=(?m)"\\s*#[^"]*?"
+replacement7=""
+
+## rule 8:  eliminates final empty lines in description (attribute)
+regex8=&#xD;&#xA;"
+replacement8="

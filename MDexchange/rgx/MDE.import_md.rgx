@@ -1,0 +1,46 @@
+#/** @file
+# Regex rules for the MD input file, before transformation to XML (import).
+# - Making XML compatible the file symenuitemnew.HTML from MD
+#
+# @note
+#  - Rule numbers must start from 1 and must be progressive. <br />
+#  - This file must be used with <tt>regexfilter</tt> (b mode) in shell or using a custom driver 
+#*/
+#/** @file
+# * @version 15/12/21 for MDExchange.
+# * @author &copy;2021 Marco Sillano.
+#*/
+/**
+*Pseudo-function with actual rules.
+*/
+
+## rule1: delete DOCTYPE
+regex1=^<?xml version="1.0" encoding="UTF-16"?>
+replacement1=
+
+## rule2: delete head
+regex2=(?s)<head.*?/head>
+replacement2=
+
+## rule3: delete title
+regex3=(?m)^<h2>My SyMenu.*</h2>$
+replacement3=
+
+## rule 4: change root (HTML)
+regex4=html>
+replacement4= rootnode>
+
+## rule 5: eliminates escaped comments
+regex5=(?s)<p>&lt;!-.*?-&gt;\\s*</p>
+replacement5=
+
+## rule 5: set xml 
+# regex5=^([\\s\\S])
+# replacement5=<?xml version="1.0" encoding="ISO-8859-1"?>$1
+
+## rule 6: escape all '&' (just in case)
+# allowed: &amp;, &lt;, &gt;, &quot;, &apos; + &#nnn; &#xEE;
+regex6=&(?!amp;|lt;|gt;|quot;|apos;|#)
+replacement6=&amp;
+
+## end 

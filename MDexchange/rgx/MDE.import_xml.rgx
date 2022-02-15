@@ -1,0 +1,26 @@
+#/** @file
+# Regex rules after final XML transformation (import).
+# - normalizes CRLF
+#
+# @note
+#  - Rule numbers must start from 1 and must be progressive. <br />
+#  - This file must be used with <tt>regexfilter</tt> (b mode) in shell or using a custom driver 
+#*/
+#/** @file
+# * @version 15/12/21 for MDExchange.
+# * @author &copy;2021 Marco Sillano.
+#*/
+/**
+*Pseudo-function with actual rules.
+*/
+
+## rule1: change LF to CRLF
+regex1=([^\\r])\\n
+replacement1=$1\r\n
+
+## rule2: change &#xA; to &#xD;&#xA;
+regex2=([^;])&#xA;
+replacement2=$1&#xD;&#xA;
+
+
+## end 

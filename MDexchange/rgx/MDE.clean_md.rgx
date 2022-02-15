@@ -1,0 +1,49 @@
+#/** @file
+# Regex rules for cleanup after SAXON transformation to MD (export).
+# Forces some conditions required by a good MD file, not handled by the transformation:
+#  - SAXON uses only LF, and not CRLF, and indents comments also.
+#  - The XSLT parametric transformation produces a variable amount of empty lines. 
+#  - In attributes, CRLF are HTML escaped
+#
+# @note
+#  - Rule numbers must start from 1 and must be progressive. <br />
+#  - This file must be used with <tt>regexfilter</tt> (b mode) in shell or using a custom driver 
+#*/
+#/** @file
+# * @version 15/12/21 for MDExchange.
+# * @author &copy;2021 Marco Sillano.
+#*/
+
+/**
+*Pseudo-function with actual rules.
+*/
+
+## rule1: change mixed code &#xD;LF: delete &#xD;
+regex1=(?m)&#xD;$
+replacement1=
+
+## rule2: change LF to CRLF
+regex2=([^\\r])\\n
+replacement2=$1\r\n
+
+## rule3: no spaces before <!--
+regex3=[ ]*<!--
+replacement3=<!--
+
+## rule 4: eliminate one or more empty lines 
+regex4=\\r\\n\\s*\\r\\n
+replacement4=\r\n
+
+## rule 5: add one extra line before comments
+regex5=([\\S])\\r\\n<!-
+replacement5=$1\r\n\r\n<!-
+
+## rule 6: add one extra line before Items
+regex6=([\\S])\\r\\n>(?!~)
+replacement6=$1\r\n\r\n>
+
+## rule 7: add one extra line before final (note: the number of '-' is important)
+regex7=([\\S])\\r\\n-----------------------------
+replacement7=$1\r\n\r\n-----------------------------
+
+## end 

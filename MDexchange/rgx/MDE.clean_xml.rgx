@@ -1,0 +1,70 @@
+#/** @file
+# Regex rules for XML file processing before transformation (import).
+# Make the file symenuitem.xml compatible with MD:
+# - Escape some chars (* and initial #) as required by MD 
+# - In attributes, CRLF are HTML escaped
+#
+# @note
+#  - Rule numbers must start from 1 and must be progressive. <br />
+#  - This file must be used with <tt>regexfilter</tt> (b mode) in shell or using a custom driver 
+#*/
+#/** @file
+# * @version 15/12/21 for MDExchange.
+# * @author &copy;2021 Marco Sillano.
+#*/
+
+/**
+*Pseudo-function with actual rules.
+*/
+
+## rule 1: escape all (*) for MD
+regex1=\\*
+replacement1=\\\\*
+
+## rule 2: escape starting # for MD (node)
+regex2=(?m)^[ ]*#
+replacement2=\\\\#
+
+## rule 3: escape starting # for MD (attribute) 
+regex3=&#xA;#
+replacement3=&#xA;\\\\#
+
+## rule 4:  limit case: 'description>CRLF\#tag"' becomes 'description>\#tag' in description (node)
+regex4=description>\\r\\n\\\\#
+replacement4=description>\\\\#
+
+## rule 5:  limit case: 'description>CRLF\#tag"' becomes 'description>\#tag' in description (attribute)
+regex5=description>&#xD;&#xA;\\\\#
+replacement5=description>\\\\#
+
+## rule 6: escape all '&' (just in case)
+# allowed: &amp;, &lt;, &gt;, &quot;, &apos; + &#nnn; &#xEE;
+regex6=&(?!amp;|lt;|gt;|quot;|apos;|#)
+replacement6=&amp;
+
+## rule 7: trim space in description (attribute)
+regex7=tion="[\\s]+([\\S])
+replacement7=tion="$1
+
+## rule 8: trim space in description(attribute)
+regex8=([\\S])[\\s]+"
+replacement8=$1"
+
+## rule 9: trim space in description (node)
+regex9=tion>[\\s]+([\\S])
+replacement9=tion>$1
+
+## rule 10: trim space in description(node)
+regex10=([\\S])[\\s]+</des
+replacement10=$1</des
+
+## rule 11: Add block mark to '~~~' 
+regex11=&#xD;&#xA~~~
+replacement11=&#xD;&#xA>~~~
+
+## rule 12: Add block mark to '~~~'
+regex12=\\r\\n~~~
+replacement12=\r\n>~~~
+
+
+## end 
