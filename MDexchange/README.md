@@ -57,7 +57,7 @@ Done.
 **notes:**
 
 - *Using **MDexchange** is safe, as it makes a backup before any changes to SyMenuItem.zip. The simple **SyMenuUndo.bat** tool can restore SyMenuItem.zip from the last backup.*
-- *Using **MDexchange** is safe, because it never delete one Item: all Items from the original menu, but not present in the updated output are grouped in an ad hoc container named 'orphans'.
+- *Using **MDexchange** is safe, because it never delete one Item: all Items from the original menu, but not present in the updated output are grouped in an ad hoc container named 'orphans'.*
 - *Using **MarkdownPad2** is mandatory: I have tested many MD editors, and the MD->HTML  transformation is handled in different ways by different programs. As an extra, MarkdownPad2 offers visible feedback with easy CSS handling, even in the free version, useful for changing the look of HTML output. If you like, you can use a more featured editor to edit the MD file (e.g. MarkdownPad2 has no "find and replace" function) but it is mandatory to load  the edited file in MarkdownPad2 for export to (X)HTML.*
 
 ### Share menus
@@ -67,4 +67,4 @@ A menu Exported in 'TREE' mode does no contains any local references. Then you c
 
 - The user can export now the new menu to MD, and edit the MD file: move programs to right place and update descriptions. Once finished he has to import the file back into SyMenu.
 
-*Actually Items can be shared too, but Items require some extra editing in SyMenu, to add the local path (if it exist in target PC!). New menu entries are marked as 'FAKE' by MD2SyMenuImport as a reminder. See MDrules.md, it contains Items.*
+*Actually Items can be shared too, but Items require some extra editing in SyMenu, to add the local path (if it exist in target symenu or host PC!). New menu entries are marked as 'FAKE' by MD2SyMenuImport as a reminder. See MDrules.md, it contains Items.*
