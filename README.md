@@ -9,13 +9,13 @@
 
 [**SyMenu prettyPrint**](https://github.com/msillano/ms_symtools/tree/main/PrettyPrintItems  "Download from GitHub") (<tt>prettyPrintItems.bat</tt>) is a tool that extracts a snapshot from the file <code>SyMenuItem.zip</code>, with all the data of the nodes currently present in the **SyMenu** menu and presents them, in the form of a complete tree, in a dynamic HTML page. This allows you to easily handle menus of any size and complexity. 
 
-*Under development:*
-
 [**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub") (<tt>SyMenu2MDexport.bat</tt> and <tt>MD2SyMenuImport.bat</tt>) is a tool that allows you to share menus between users, adding import/export functionality to SyMenu.
 
 The export format is *markdown*. This allows for easily handling also of large menus. By editing an *MD* file you can update and reorganize the menu tree, change names and edit tooltips for all items. 
 
 [**SyMenu Undo**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "Download from GitHub")  (<tt>SyMenuUndo.bat</tt>) is included in **MDexchange**. This simple tool restores SyMenuItem.zip from the most recent backup.
+
+*Under development:*
 
 **SyMenu to dir** Creates a folder structure in the file system that is isomorphic to the SyMenu's tree.
 
