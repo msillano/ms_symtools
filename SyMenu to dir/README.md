@@ -22,7 +22,7 @@ Look at the help file <code>SyMenu2dir.chm</code> for specific preconditions,  i
  
 **Download**
 
-You can download the zip file with the last version in the [ms_symtools main page](https://github.com/msillano/ms_symtools)
+You can download the zip file with the last version in the [ms_symtools main page](https://github.com/msillano/ms_symtools).
 
 **Versions:**
 
