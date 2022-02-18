@@ -5,7 +5,7 @@
 *Of course, the **ms_symtool** tools have been created based on my needs and are often not quite 'user-friendly', but I think they can also be useful for other experienced users with similar problems. For this, they are Open Source and the latest version is available on [GitHub](https://github.com/msillano/ms_symtools "Public repository").*
 
 -------------------------------
-[**SyMenu to dir**](https://github.com/msillano/ms_symtools/tree/main/PrettyPrintItems  "Download from GitHub") (SyMenu2dir.bat) is a simple utility that creates a BAT file to get a folder structure isomorphic to the SyMenu's tree. I use this tool to create a tree to store the local documentation.
+[**SyMenu to dir**](https://github.com/msillano/ms_symtools/blob/main/SyMenu.toDir.2.1.zip?raw=true  "Download from GitHub") (SyMenu2dir.bat) is a simple utility that creates a BAT file to get a folder structure isomorphic to the SyMenu's tree. I use this tool to create a tree to store the local documentation.
 
 This program reads SyMenuItem.zip configuration file and creates a BAT file for the entire menu: only with the tree, or, optionally, with all items. The fact that it creates a BAT file, instead of creating dirs directly, makes it easy to delete some branches to suit your needs.
 
