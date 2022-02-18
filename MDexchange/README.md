@@ -68,3 +68,15 @@ A menu Exported in 'TREE' mode does no contains any local references. Then you c
 - The user can export now the new menu to MD, and edit the MD file: move programs to right place and update descriptions. Once finished he has to import the file back into SyMenu.
 
 *Actually Items can be shared too, but Items require some extra editing in SyMenu, to add the local path (if it exist in target symenu or host PC!). New menu entries are marked as 'FAKE' by MD2SyMenuImport as a reminder. See MDrules.md, it contains Items.*
+
+For more info you can download the **MDexchange** help (file *MDexchange.chm*).
+
+###Download
+
+You can download the zip file with the last version in the [ms_symtools main page](https://github.com/msillano/ms_symtools)
+
+**Versions:**
+
+2.1 beta
+
+  Initial version.
