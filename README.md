@@ -11,7 +11,7 @@
 
 [**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "GitHub") (<tt>SyMenu2MDexport.bat</tt> and <tt>MD2SyMenuImport.bat</tt>) is a tool that allows you to share menus between users, adding import/export functionality to SyMenu. [Download.zip.](https://github.com/msillano/ms_symtools/blob/main/MDExchange2.1.zip?raw=true  "Download from GitHub")
 
-The export format is *markdown*. This allows for easily handling also of large menus. By editing an *MD* file you can update and reorganize the menu tree, change names and edit tooltips for all items. 
+*The export format is markdown. This allows for easily handling also of large menus. By editing an *MD* file you can update and reorganize the menu tree, change names and edit tooltips for all items.* 
 
 [**SyMenu Undo**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "GitHub") (<tt>SyMenuUndo.bat</tt>) is included in **MDexchange**. This simple tool restores SyMenuItem.zip from the most recent backup. [Downlad zip.](https://github.com/msillano/ms_symtools/blob/main/MDExchange2.1.zip?raw=true  "Download from GitHub")
 
