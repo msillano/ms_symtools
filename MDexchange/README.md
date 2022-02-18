@@ -71,7 +71,7 @@ A menu Exported in 'TREE' mode does no contains any local references. Then you c
 
 For more info you can download the **MDexchange** help (file *MDexchange.chm*).
 
-###Download
+### Download ###
 
 You can download the zip file with the last version in the [ms_symtools main page](https://github.com/msillano/ms_symtools)
 
