@@ -11,8 +11,7 @@ This program reads SyMenuItem.zip configuration file and creates a BAT file for 
 
 ![BAT output file](https://github.com/msillano/ms_symtools/blob/main/img/fig103.jpg?raw=true)
 
- 
-###use
+ **use**
  
 Running the output BAT file will make all required folders.
 
@@ -21,7 +20,7 @@ Or you can mix: some branches with more detailed directories and some without it
 
 Look at the help file <code>SyMenu2dir.chm</code> for specific preconditions,  istructions, etc..  
  
-###Download
+**Download**
 
 You can download the zip file with the last version in the [ms_symtools main page](https://github.com/msillano/ms_symtools)
 
