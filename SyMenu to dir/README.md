@@ -11,50 +11,24 @@ This program reads SyMenuItem.zip configuration file and creates a BAT file for 
 
 ![BAT output file](https://github.com/msillano/ms_symtools/blob/main/img/fig103.jpg?raw=true)
 
-**options**
-
-This tool is simple, but rich of options:
-
-- DEFAULTCONFIG: the path of SyMenuItem.zip, if different from the default one.
-- BASEPATH: the File System base path, or '.' (dot)
-- ONLYTREE: define the deep of the created dirs - Tree only or Tree + Items
-- POSID: add a numerical prefix to names to keep the menu order
-- DUMMY: to put a small file in any new directory, so you can delete empty dirs.
  
-**use**
+###use
  
 Running the output BAT file will make all required folders.
 
 *Of course you can delete some lines in BAT file, if you don't need that dirs. As help, comments marks START and END of any branch.<br /> 
 Or you can mix: some branches with more detailed directories and some without items: runs two times the tool, one time with ONLYTREE=NO and one time with ONLYTREE=YES then cut and mix the BAT files.* 
 
-
---------------------------------------
-**Installation** (same for all ms-symtools)
-
- - Unzip the distribution file in dir <code>[SyMenu]/Programfile</code>, so you get:
-
-  <pre>
-	ms-symtools\
-		SyMenu2dir.bat
-		SyMenu2dir.chm
-		xslt\
-			SyMenu2dir.xslt
-		lib\
-			7z.dll
-			7z.exe
-			IKVM.OpenJDK.Charsets.dll
-			IKVM.OpenJDK.Core.dll
-			IKVM.OpenJDK.Text.dll
-			IKVM.OpenJDK.Util.dll
-			IKVM.OpenJDK.XML.API.dll
-			IKVM.Runtime.dll
-			saxon-he-10.5.dll
-			saxon-he-api-10.5.dll
-			Transform.exe
-		result\</pre>
-
- - Look at the help file <code>SyMenu2dir.chm</code> for specific preconditions,  istructions, etc..  
+Look at the help file <code>SyMenu2dir.chm</code> for specific preconditions,  istructions, etc..  
  
+###Download
+
+You can download the zip file with the last version in the [ms_symtools main page](https://github.com/msillano/ms_symtools)
+
+**Versions:**
+
+2.1 beta
+
+  Initial version.
 
 
