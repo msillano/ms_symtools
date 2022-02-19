@@ -7,7 +7,7 @@
 -------------------------------
 *Available Tools:*
 
-[**SyMenu prettyPrint**](https://github.com/msillano/ms_symtools/tree/main/PrettyPrintItems  "GitHub") (<tt>prettyPrintItems.bat</tt>) is a tool that extracts a snapshot from the file <code>SyMenuItem.zip</code>, with all the data of the nodes currently present in the **SyMenu** menu and presents them, in the form of a complete tree, in a dynamic HTML page. This allows you to easily handle menus of any size and complexity. [Download zip.](https://github.com/msillano/ms_symtools/blob/main/SyMenu.prettyPrint.2.2.zip?raw=true  "Download from GitHub")
+[**SyMenu prettyPrint**](https://github.com/msillano/ms_symtools/tree/main/PrettyPrintItems  "GitHub") (<tt>prettyPrintItems.bat</tt>) is a tool that extracts a snapshot from the file <code>SyMenuItem.zip</code>, with all the data of the nodes currently present in the **SyMenu** menu and presents them, in the form of a complete tree, in a dynamic HTML page. This allows you to easily handle menus of any size and complexity. [Download zip.](https://github.com/msillano/ms_symtools/blob/main/SyMenu.prettyPrint.2.2.1.zip?raw=true  "Download from GitHub")
 
 [**SyMenu MD Exchange**](https://github.com/msillano/ms_symtools/tree/main/MDexchange  "GitHub") (<tt>SyMenu2MDexport.bat</tt> and <tt>MD2SyMenuImport.bat</tt>) is a tool that allows you to share menus between users, adding import/export functionality to SyMenu. [Download.zip.](https://github.com/msillano/ms_symtools/blob/main/MDExchange2.1.zip?raw=true  "Download from GitHub")
 
